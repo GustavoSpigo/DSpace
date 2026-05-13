@@ -38,7 +38,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.news-edit.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

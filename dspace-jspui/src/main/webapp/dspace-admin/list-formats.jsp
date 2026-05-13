@@ -42,7 +42,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.list-formats.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

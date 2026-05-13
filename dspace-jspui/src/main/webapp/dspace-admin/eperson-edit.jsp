@@ -73,7 +73,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.eperson-edit.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin"

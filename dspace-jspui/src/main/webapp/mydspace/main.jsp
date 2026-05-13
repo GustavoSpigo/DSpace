@@ -23,11 +23,16 @@
 <%@page import="org.apache.commons.lang3.StringUtils"%>
 <%@page import="org.dspace.content.MetadataValue"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%! 
+private static final org.apache.log4j.Logger logger = 
+    org.apache.log4j.Logger.getLogger("mydspace.main");
+%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"
     prefix="fmt" %>
 
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
+
 
 <%@ page  import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
 
@@ -70,9 +75,69 @@
     Boolean displayMembership = (Boolean)request.getAttribute("display.groupmemberships");
     boolean displayGroupMembership = (displayMembership == null ? false : displayMembership.booleanValue());
 %>
-
+<%
+// Mostrar banner apenas se usuario tem email com dominio antigo
+boolean mostrarBanner = false;
+try {
+    String email = user.getEmail();
+    if (email != null && (email.endsWith("@fatec.sp.gov.br") || email.endsWith("@etec.sp.gov.br"))) {
+        mostrarBanner = true;
+        logger.debug("Showing CPS email migration banner for user: " + email);
+    }
+} catch (Exception e) {
+    logger.error("Error loading CPS email migration banner: " + e.getMessage(), e);
+    // Display sanitized error message to user, do NOT expose stack trace
+    out.println("<div style='background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; padding:12px; margin-bottom:20px; border-radius:4px;'>");
+    out.println("<strong>Erro ao carregar banner:</strong> Contate o administrador se este erro persistir.");
+    out.println("</div>");
+}
+%>
 <dspace:layout style="submission" titlekey="jsp.mydspace" nocache="true">
-	<div class="panel panel-primary">
+<%
+// Verificar se email foi atualizado com sucesso
+String sucesso = request.getParameter("sucesso");
+if ("1".equals(sucesso)) {
+    Object msgObj = session.getAttribute("emailMigracaoSucesso");
+    if (msgObj != null) {
+        out.println("<div style='background:#d4edda; border:1px solid #c3e6cb; color:#155724; padding:12px; margin-bottom:20px; border-radius:4px;'>");
+        out.println("<strong>✓ Sucesso!</strong> " + msgObj.toString());
+        out.println("</div>");
+        session.removeAttribute("emailMigracaoSucesso");
+    }
+}
+
+// Verificar se houve erro na atualização
+Object erroObj = session.getAttribute("emailMigracaoErro");
+if (erroObj != null) {
+    out.println("<div style='background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; padding:12px; margin-bottom:20px; border-radius:4px;'>");
+    out.println("<strong>✗ Erro!</strong> " + erroObj.toString());
+    out.println("</div>");
+    session.removeAttribute("emailMigracaoErro");
+}
+%>
+<% if (mostrarBanner) { %>
+<div id="banner-cps" class="panel panel-primary" style="margin-bottom:20px;">
+    <div class="panel-heading" style="background:#ffecb3;color:#333;border-bottom:2px solid #ffc107;font-size:1.1em;">
+        <strong>Atenção:</strong> O domínio dos e-mails do Centro Paula Souza mudou!
+    </div>
+    <div class="panel-body" style="text-align:center;">
+        Digite seu novo e-mail com o domínio <strong>@cps.sp.gov.br</strong> para continuar usando o sistema.<br>
+        <form action="mydspace/atualizarEmail.jsp" method="post" style="margin-top:8px;display:inline-block;">
+            <input type="email" name="novoEmail" placeholder="seuemail@cps.sp.gov.br" required pattern="^[a-zA-Z0-9._%+-]+@cps\\.sp\\.gov\\.br$" style="padding:6px;">
+            <button type="submit" style="padding:6px 12px;background:#ffc107;border:none;">Atualizar e-mail</button>
+        </form>
+    </div>
+</div>
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.altKey && e.key === 'b') {
+        var banner = document.getElementById('banner-cps');
+        if (banner) banner.style.display = 'block';
+    }
+});
+</script>
+<% } %>
+        <div class="panel panel-primary">
         <div class="panel-heading">
                     <fmt:message key="jsp.mydspace"/>: <%= Utils.addEntities(user.getFullName()) %>
 	                <span class="pull-right"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#mydspace\"%>"><fmt:message key="jsp.help"/></dspace:popup></span>

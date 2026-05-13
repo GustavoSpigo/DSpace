@@ -52,7 +52,7 @@
 %>
 
 <dspace:layout titlekey="jsp.dspace-admin.upload-logo.title"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="<%= link %>" 

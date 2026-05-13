@@ -34,6 +34,7 @@
 
 <style type="text/css">
 	body {background-color: #ffffff}
+	img.controlledvocabulary {display: none;}
 </style>
 
 
@@ -53,7 +54,7 @@
 	function sendBackToParentWindow(node) {
 		var resultPath = "";
 		var firstNode = 1;
-		var pathSeparator = "::";
+		var pathSeparator = "";
 		
 		
 		while(node != null) {
@@ -92,23 +93,22 @@
 %>
 
 <br/>
-
 <div style="margin-left:10px">
 
 	<fmt:message key="jsp.controlledvocabulary.controlledvocabulary.trimmessage"/>
-
+	
 <table>
 <tr>
 <td>
     <fmt:message key="jsp.controlledvocabulary.controlledvocabulary.filter"/> 
 </td>
-<td>    
-	<form name="filterVocabulary" 
+<td>
+	<form name="filterVocabulary"  
 		  method="post" 
 		  action="<%= request.getContextPath()%>/controlledvocabulary">
 	  
 	  <input style="border-width:1px;border-style:solid;" name="filter" type="text" id="filter" size="35" value="<%= filter %>"/>
-	  <input type="submit" name="submit" value="<fmt:message key='jsp.controlledvocabulary.controlledvocabulary.trimbutton'/>"/>
+	  <input type="submit" name="submit" value="Pesquisar"/>
 	  <input type="hidden" name="ID" value="<%= ID %>"/>
 	  <input type="hidden" name="action" value="filter"/>
 	  <input type="hidden" name="callerUrl" value="<%= request.getContextPath()%>/controlledvocabulary/controlledvocabulary.jsp"/>
@@ -118,7 +118,7 @@
 	<form name="clearFilter" method="post" action="<%= request.getContextPath() %>/controlledvocabulary">
 	  <input type="hidden" name="ID" value="<%= ID %>"/>
 	  <input type="hidden" name="filter" value=""/>
-	  <input type="submit" name="submit" value="<fmt:message key='jsp.controlledvocabulary.controlledvocabulary.clearbutton'/>"/>
+	  <input type="submit" name="submit" value="Limpar pesquisa"/>
 	  <input type="hidden" name="action" value="filter"/> 
 	  <input type="hidden" name="callerUrl" value="<%= request.getContextPath()%>/controlledvocabulary/controlledvocabulary.jsp"/>
     </form>
@@ -126,7 +126,8 @@
 </tr>
 <tr>
 <td colspan="3" class="submitFormHelpControlledVocabularies">
-	<dspace:popup page="/help/index.html#controlledvocabulary"><fmt:message key="jsp.controlledvocabulary.controlledvocabulary.help-link"/></dspace:popup>
+	Caso não tenha a palavra-chave na lista solicite a inclusão do novo termo<br>através da opção "Vocabulário Controlado" no menu ou 
+	<dspace:popup page="/controlledvocabulary/info.jsp">clique aqui</dspace:popup>
 </td>
 </tr>
 </table>

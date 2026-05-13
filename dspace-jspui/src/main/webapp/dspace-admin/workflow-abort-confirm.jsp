@@ -35,7 +35,7 @@
 
 <dspace:layout style="submission" 
 			   titlekey="jsp.dspace-admin.workflow-abort-confirm.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

@@ -67,7 +67,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.authorize-advanced.advanced"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parentlink="<%= link %>"
                parenttitlekey="jsp.administer">

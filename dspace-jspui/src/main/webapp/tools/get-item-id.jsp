@@ -47,7 +47,7 @@
     }
 %>
 <dspace:layout style="submission" titlekey="jsp.tools.get-item-id.title"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="<%= link %>">

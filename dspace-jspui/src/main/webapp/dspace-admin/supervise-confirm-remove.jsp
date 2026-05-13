@@ -40,7 +40,7 @@
 
 <dspace:layout style="submission"
 			   titlekey="jsp.dspace-admin.supervise-confirm-remove.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parentlink="/dspace-admin"
                parenttitlekey="jsp.administer">

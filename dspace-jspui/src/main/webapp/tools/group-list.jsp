@@ -55,7 +55,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.tools.group-list.title"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="<%= link %>"

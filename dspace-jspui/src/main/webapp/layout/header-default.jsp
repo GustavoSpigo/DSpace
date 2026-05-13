@@ -6,25 +6,22 @@
 
     http://www.dspace.org/license/
 
---%>
-<%--
+--%><%--
   - HTML header for main home page
-  --%>
+  
+--%><%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" 
+%><%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" 
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
+%><%@ page contentType="text/html;charset=UTF-8" 
 
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.Enumeration"%>
-<%@ page import="org.dspace.app.webui.util.JSPManager" %>
-<%@ page import="org.dspace.core.ConfigurationManager" %>
-<%@ page import="org.dspace.app.util.Util" %>
-<%@ page import="javax.servlet.jsp.jstl.core.*" %>
-<%@ page import="javax.servlet.jsp.jstl.fmt.*" %>
-
-<%
+%><%@ page import="java.util.List"
+%><%@ page import="java.util.Enumeration"
+%><%@ page import="org.dspace.app.webui.util.JSPManager" 
+%><%@ page import="org.dspace.core.ConfigurationManager" 
+%><%@ page import="org.dspace.app.util.Util" 
+%><%@ page import="javax.servlet.jsp.jstl.core.*" 
+%><%@ page import="javax.servlet.jsp.jstl.fmt.*" 
+%><%
     String title = (String) request.getAttribute("dspace.layout.title");
     String navbar = (String) request.getAttribute("dspace.layout.navbar");
     boolean locbar = ((Boolean) request.getAttribute("dspace.layout.locbar")).booleanValue();
@@ -40,9 +37,7 @@
     String dsVersion = Util.getSourceVersion();
     String generator = dsVersion == null ? "DSpace" : "DSpace "+dsVersion;
     String analyticsKey = ConfigurationManager.getProperty("jspui.google.analytics.key");
-%>
-
-<!DOCTYPE html>
+%><!DOCTYPE html>
 <html>
     <head>
         <title><%= siteName %>: <%= title %></title>
@@ -50,10 +45,12 @@
         <meta name="Generator" content="<%= generator %>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon"/>
-	<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui/redmond/jquery-ui-1.12.1.css" type="text/css" />
-	<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />
-	<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/dspace-theme.css" type="text/css" />
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/dspace-theme.css?2023" type="text/css" />
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/ric.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Material+Icons&display=swap" rel="stylesheet">
 <%
     if (!"NONE".equals(feedRef))
     {
@@ -79,12 +76,13 @@
         }
 %>
         
-	<script type='text/javascript' src="<%= request.getContextPath() %>/static/js/jquery/jquery-3.4.1.min.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.12.1.min.js'></script>
+        <script type='text/javascript' src="<%= request.getContextPath() %>/static/js/jquery/jquery-1.10.2.min.js"></script>
+        <script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.10.3.custom.min.js'></script>
         <script type='text/javascript' src='<%= request.getContextPath() %>/static/js/bootstrap/bootstrap.min.js'></script>
         <script type='text/javascript' src='<%= request.getContextPath() %>/static/js/holder.js'></script>
         <script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
-        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"> </script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/ric.js"></script>
         <dspace:include page="/layout/google-analytics-snippet.jsp" />
 
     <%
@@ -107,7 +105,8 @@
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body class="undernavigation">
 <a class="sr-only" href="#content">Skip navigation</a>
-<header class="navbar navbar-inverse navbar-fixed-top">    
+<header class="navbar-fixed-top" style="margin-bottom:0px;border:0px">
+<dspace:include page="/layout/sp-gov-header.jsp" />
     <%
     if (!navbar.equals("off"))
     {
@@ -126,27 +125,27 @@
 <%
     }
 %>
-</header>
-
-<main id="content" role="main">
-<div class="container banner">
+<div class="container">
+  <dspace:include page="/layout/location-bar.jsp" />
+</div>  
+</header><main id="content" role="main">
+<!--div class="container banner">
     <div class="row">
         <div class="col-md-9 brand">
             <h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
             <fmt:message key="jsp.layout.header-default.brand.description" /> 
         </div>
-        <div class="col-md-3"><img class="pull-right" src="<%= request.getContextPath() %>/image/logo.gif" alt="DSpace logo" />
+        <div class="col-md-3"><img class="pull-right" src="<%= request.getContextPath() %>/image/logo.gif" alt="RIC logo" />
         </div>
     </div>
-</div>
-<br/>
+</div-->
                 <%-- Location bar --%>
 <%
     if (locbar)
     {
 %>
 <div class="container">
-    <dspace:include page="/layout/location-bar.jsp" />
+    
 </div>                
 <%
     }
@@ -154,7 +153,7 @@
 
 
         <%-- Page contents --%>
-<div class="container">
+<div class="container" id="content">
 <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
     <div class="row">
     <div class="col-md-9">

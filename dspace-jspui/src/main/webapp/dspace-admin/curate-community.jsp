@@ -43,7 +43,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.curate.community.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

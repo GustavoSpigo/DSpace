@@ -1,0 +1,237 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+.siteName{
+  display: inline-block;
+  color: white;
+  line-height: 50px;
+  font-size: 30px;
+  vertical-align: middle;
+  font-family: 'Roboto', sans-serif;
+
+}
+.nomeCompleto{
+  color: #ffffffa6;
+}
+.barra-location{
+    list-style: none;
+    line-height: 13px;
+    font-size: 12px;
+    margin: 0px 15px;
+    background-color: #a3130d;
+    color: #ccc;
+    padding-inline-start: 2px;
+}
+.barra-location li, .barra-location a{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.barra-location::before{
+    content: "\e127";
+    font-family: 'Glyphicons Halflings';
+}
+.barra-location a{
+    color: #ccc;
+}
+.barra-location>li {
+    display: inline-block;
+}
+.barra-location>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "\e092";
+    font-family: 'Glyphicons Halflings';
+}
+.fundoMenu{
+  background-color: #921209;
+  height: 52px;
+  border-bottom: #710000 .5rem solid;
+  border-top: #710000 .1rem solid;
+  border-left: #710000 .1rem solid;
+  border-right: #710000 .1rem solid;
+}
+.navbar-brand {
+  padding: 11px 11px;
+  border-right: #710000 .1rem solid;
+}
+.navbar-brand:hover {
+  background-color: #a3130d;
+}
+.navbar-nav>li>a {
+  padding-top: unset;
+  padding-bottom: unset;
+  color: white;
+  text-shadow: none;
+  border-right: #710000 .1rem solid;
+  height: 46px;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbar-right>li>a{
+  border-left: #710000 .1rem solid;
+  border-right: none;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  text-decoration: none;
+  background-color: #a3130d;
+  color: #fcb000;
+}
+.center{
+    text-align: center;
+}
+#content {
+    min-height: 500px;
+}
+
+.box-sidebar{
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  .like-button > input{
+      display: none;
+  }
+  .like-button{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -o-appearance: button;
+    -ms-appearance: button;
+    appearance: button;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .box-content{
+    margin: 10px;
+  }
+  .box-title{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #a3130d;
+  }
+  .box-sidebar .form-group{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .box-sidebar td + td{ 
+      padding-left: 7px;
+  }
+
+  .box-home{
+    position: relative;
+    display: inline-flex;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 300px;
+    min-height: 70px;   
+    margin: 0px 0px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;    
+    background-color: #f7f7f7;
+  }
+  .list-group-item-heading{
+      text-align: left;
+  }
+  main .container{
+    max-width: 1140px;
+  }
+  .list-group-item{
+    margin-bottom: 10px;
+    width: 390px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    transition: 0.2s;
+  }
+  .box-home{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    padding-top: 15px;
+    width: 360px;
+  }
+  #facets .list-group-item{
+    padding: 10px 10px;
+  }
+  .list-group-item:last-child, .list-group-item:first-child{
+    border-radius: 10px;
+    padding: 10px 0px;
+  }
+  .facetsBox .list-group-item{
+    width: 220px;
+  }
+
+  
+
+
+  .list-group, .panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+  .navbar-fixed-top{
+    background-color: #a3130d;
+  }
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: unset;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  background-color: #a3130d;
+  border-color: #710000;
+}
+.titulo-comunidade{
+  background-color: unset;
+}
+.introducao h2{
+  font-size: 20px;
+  color: #00000080;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.nav .material-icons{
+  vertical-align: bottom;
+}
+h4.comunidade a.material-icons, h4.colecoes a.material-icons{
+  font-size: 32px;
+  float: left;
+  color: #000000dd;
+  padding-right: 5px;
+  font-family: 'Material Icons';
+  text-decoration: none;
+}
+h4.comunidade a, h4.colecoes a{
+  color: #000000dd;
+  font-family: Roboto Condensed;
+}
+.list-group-item:hover{
+  background-color: #00000008;
+  
+}
+
+#menu-admin{
+  position: absolute;
+  top: 45px;
+  display: none;
+  background-color: #921209;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.dropdown:hover #menu-admin{
+  display: block;
+  opacity: 1;
+}
+#menu-admin .navbar-collapse{
+  width: max-content;
+}
+main .barra-location{
+    position: relative;
+    top: -23px;
+    width: 100%;
+    margin: auto;
+}

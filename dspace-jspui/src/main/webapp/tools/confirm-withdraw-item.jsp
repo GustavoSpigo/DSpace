@@ -50,7 +50,7 @@
 %>
 
 <dspace:layout titlekey="jsp.tools.confirm-withdraw-item.title"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="<%= link %>"

@@ -93,7 +93,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.tools.edit-community.title"
-		       navbar="<%= naviAdmin %>"
+		       navbar="default"
 		       locbar="link"
 		       parentlink="<%= link %>"
 		       parenttitlekey="jsp.administer" nocache="true">

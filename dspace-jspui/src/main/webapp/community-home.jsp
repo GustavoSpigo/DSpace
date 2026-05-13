@@ -85,9 +85,9 @@
 
 <%@page import="org.dspace.app.webui.servlet.MyDSpaceServlet"%>
 <dspace:layout locbar="commLink" title="<%= name %>" feedData="<%= feedData %>">
-<div class="well">
+<div class="titulo-comunidade">
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-<%=((logo != null) ? "8": "12")%>">
         <h2><%= name %>
         <%
             if(configurationService.getBooleanProperty("webui.strengths.show"))
@@ -97,8 +97,6 @@
 <%
             }
 %>
-		<small><fmt:message key="jsp.community-home.heading1"/></small>
-        <a class="statisticsLink btn btn-info" href="<%= request.getContextPath() %>/handle/<%= community.getHandle() %>/statistics"><fmt:message key="jsp.community-home.display-statistics"/></a>
 		</h2>
 	</div>
 <%  if (logo != null) { %>
@@ -109,10 +107,9 @@
  </div>
 
 <% if (StringUtils.isNotBlank(intro)) { %>
-  <%= intro %>
+  <div class="introducao"><%= intro %></div>
 <% } %>
 </div>
-<p class="copyrightText"><%= copyright %></p>
 	<div class="row">
 <%
 	if (rs != null  && rs.count() > 0)
@@ -205,33 +202,6 @@
 	}
 %>
 </div>	
-
-<%-- Browse --%>
-<div class="panel panel-primary">
-	<div class="panel-heading"><fmt:message key="jsp.general.browse"/></div>
-	<div class="panel-body">
-   				<%-- Insert the dynamic list of browse options --%>
-<%
-	for (int i = 0; i < bis.length; i++)
-	{
-		String key = "browse.menu." + bis[i].getName();
-%>
-	<form method="get" action="<%= request.getContextPath() %>/handle/<%= community.getHandle() %>/browse">
-		<input type="hidden" name="type" value="<%= bis[i].getName() %>"/>
-		<%-- <input type="hidden" name="community" value="<%= community.getHandle() %>" /> --%>
-		<input class="btn btn-default col-md-3" type="submit" name="submit_browse" value="<fmt:message key="<%= key %>"/>"/>
-	</form>
-<%	
-	}
-%>
-			
-	</div>
-</div>
-
-<div class="row">
-	<%@ include file="discovery/static-tagcloud-facet.jsp" %>
-</div>
-	
 <div class="row">
 <%
 	boolean showLogos = configurationService.getBooleanProperty("jspui.community-home.logos", true);
@@ -246,6 +216,8 @@
 <%
         for (int j = 0; j < subcommunities.size(); j++)
         {
+			if(ic.getCount(subcommunities.get(j)) > 0 || editor_button) 
+			{
 %>
 			<div class="list-group-item row">  
 <%  
@@ -259,7 +231,9 @@
 			<div class="col-md-12">
 <% }  %>		
 
-	      <h4 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= subcommunities.get(j).getHandle() %>">
+	      <h4 class="list-group-item-heading comunidade">
+		  	<a href="<%= request.getContextPath() %>/handle/<%= subcommunities.get(j).getHandle() %>" class="material-icons">business</a>
+			<a href="<%= request.getContextPath() %>/handle/<%= subcommunities.get(j).getHandle() %>">
 	                <%= subcommunities.get(j).getName() %></a>
 <%
                 if (configurationService.getBooleanProperty("webui.strengths.show"))
@@ -283,6 +257,7 @@
          </div> 
 <%
         }
+	}
 %>
    </div>
 </div>
@@ -302,8 +277,20 @@
 <%
         for (int i = 0; i < collections.size(); i++)
         {
-%>
-			<div class="list-group-item row">  
+			String[] hides = configurationService.getArrayProperty("webui.hide.handle");
+			String txt = "";
+			//for (int j = 0; j < hides.size(); j++){
+			//	if(collections.get(i).getHandle() == hides[j]){
+			//		txt = " style='display:none' "; 
+			//	}
+			//}
+			if(StringUtils.countMatches( StringUtils.join(hides, ","), collections.get(i).getHandle()) > 0){
+				txt = " style='display:none' ";
+			}
+						
+%>			
+			<div class="list-group-item row" <%= txt %>>  
+			 
 <%  
 		Bitstream logoCol = collections.get(i).getLogo();
 		if (showLogos && logoCol != null) { %>
@@ -315,7 +302,9 @@
 			<div class="col-md-12">
 <% }  %>		
 
-	      <h4 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= collections.get(i).getHandle() %>">
+	      <h4 class="list-group-item-heading colecoes">
+		  <a href="<%= request.getContextPath() %>/handle/<%= collections.get(i).getHandle() %>" class="material-icons">bookmarks</a>
+		  <a href="<%= request.getContextPath() %>/handle/<%= collections.get(i).getHandle() %>">
 	      <%= collections.get(i).getName() %></a>
 <%
             if(configurationService.getBooleanProperty("webui.strengths.show"))
@@ -348,6 +337,7 @@
 %>
 </div>
     <dspace:sidebar>
+	
     <% if(editor_button || add_button)  // edit button(s)
     { %>
 		 <div class="panel panel-warning">

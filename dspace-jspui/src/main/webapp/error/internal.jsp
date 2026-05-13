@@ -13,11 +13,11 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"
-    prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+<jsp-config development="true"/>
 	
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="org.apache.commons.lang.StringUtils" %>
 
 <%@ page isErrorPage="true" %>
 
@@ -39,17 +39,21 @@
         <%-- <a href="<%= request.getContextPath() %>/">Go to the DSpace home page</a> --%>
         <a href="<%= request.getContextPath() %>/"><fmt:message key="jsp.general.gohome"/></a>
     </p>
-        <!--
+        
     <%
-    String exCode = (String) request.getAttribute("javax.servlet.error.code");
-    if(StringUtils.isBlank(exCode)) {
-		out.println("No error code available");
-    }
+    Throwable ex = (Throwable) request.getAttribute("javax.servlet.error.exception");
+    if(ex == null) out.println("No stack trace available<br/>");
     else {
-		out.println("System error code: " + exCode);
-	}
-    out.println("=============================================");
-    out.println("\n\n\n");
+                for(Throwable t = ex ; t!=null; t = t.getCause())
+                {
+                    out.println(t.getMessage());
+                    out.println("=============================================");
+                    t.printStackTrace(new PrintWriter(out));
+                    out.println("\n\n\n");
+                }
+        }
+    
         %>
-      -->
+    
+      
 </dspace:layout>

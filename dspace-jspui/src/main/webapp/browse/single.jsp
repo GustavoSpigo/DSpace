@@ -82,17 +82,23 @@
 						"&amp;order=" + URLEncoder.encode(direction, "UTF-8") +
 						"&amp;rpp=" + URLEncoder.encode(Integer.toString(bi.getResultsPerPage()), "UTF-8");
 	
-	// prepare the next and previous links
+		// prepare the next and previous links
 	String next = sharedLink;
 	String prev = sharedLink;
 	
 	if (bi.hasNextPage())
     {
+		if(bi.isStartsWith()){
+			next = next + "&amp;starts_with=" + bi.getFocus();	
+		}
         next = next + "&amp;offset=" + bi.getNextOffset();
     }
 
 	if (bi.hasPrevPage())
     {
+		if(bi.isStartsWith()){
+			prev = prev + "&amp;starts_with=" + bi.getFocus();	
+		}
         prev = prev + "&amp;offset=" + bi.getPrevOffset();
     }
 
@@ -180,14 +186,28 @@
 	// If we are not browsing by a date, render the string selection header //
 	else
 	{
+		String estouNoDefault = "";
+		if(bi.getFocus() != null){
+			if(bi.getFocus().equals("0")){
+				estouNoDefault = "label label-default";
+			}
+		}
 %>	
 		<span><fmt:message key="browse.nav.jump"/></span>
-        <a class="label label-default" href="<%= sharedLink %>&amp;starts_with=0">0-9</a>
+        <a class="<%= estouNoDefault %>" href="<%= sharedLink %>&amp;starts_with=0">0-9</a>
 <%
+		
 	    for (char c = 'A'; c <= 'Z'; c++)
 	    {
+			String str2 = String.valueOf(c);
+			estouNoDefault = "";
+			if(bi.getFocus() != null){
+				if(bi.getFocus().equals(str2)){
+					estouNoDefault = "label label-default";
+				}
+			}
 %>
-        <a href="<%= sharedLink %>&amp;starts_with=<%= c %>"><%= c %></a>
+        <a class="<%= estouNoDefault %>" href="<%= sharedLink %>&amp;starts_with=<%= c %>"><%= c %></a>
 <%
 	    }
 %>

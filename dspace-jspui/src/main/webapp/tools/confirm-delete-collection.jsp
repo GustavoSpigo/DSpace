@@ -29,7 +29,7 @@
 %>
 
 <dspace:layout titlekey="jsp.tools.confirm-delete-collection.title"
-		style="submission" navbar="admin"
+		style="submission" navbar="default"
 		locbar="link"
 		parentlink="/tools"
 		parenttitlekey="jsp.administer">

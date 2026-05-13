@@ -27,7 +27,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.tools.confirm-delete-community.title"
-						navbar="admin"
+						navbar="default"
 						locbar="link"
 						parentlink="/tools"
 						parenttitlekey="jsp.administer">

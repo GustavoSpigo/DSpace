@@ -28,7 +28,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.confirm-delete-dcschema.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

@@ -18,7 +18,6 @@
   - FIXME: Assumes each bitstream in a separate bundle.
   -        Shouldn't be a problem for early adopters.
   --%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <%@ page import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
@@ -78,7 +77,6 @@
 %>
 
 <dspace:layout style="submission" locbar="off" navbar="off" titlekey="jsp.submit.upload-file-list.title">
-
     <form action="<%= request.getContextPath() %>/submit" method="post" onkeydown="return disableEnterKey(event);">
 
         <jsp:include page="/submit/progressbar.jsp"/>
@@ -177,7 +175,7 @@
 			      } %> />
 		</td>
                 <td headers="t2" class="<%= row %>RowOddCol break-all">
-                	<a href="<%= request.getContextPath() %>/retrieve/<%= bitstreams.get(i).getID() %>/<%= org.dspace.app.webui.util.UIUtil.encodeBitstreamName(bitstreams.get(i).getName()) %>" target="_blank" rel="noopener"><%= bitstreams.get(i).getName() %></a>
+                	<a href="<%= request.getContextPath() %>/retrieve/<%= bitstreams.get(i).getID() %>/<%= org.dspace.app.webui.util.UIUtil.encodeBitstreamName(bitstreams.get(i).getName()) %>" target="_blank"><%= bitstreams.get(i).getName() %></a>
             <%      // Don't display "remove" button in workflow mode
 			        if (allowFileEditing)
 			        {
@@ -188,7 +186,7 @@
 			<%
 			        } %>	
                 </td>
-                <td headers="t3" class="<%= row %>RowEvenCol"><%= bitstreams.get(i).getSizeBytes() %> bytes</td>
+                <td headers="t3" class="<%= row %>RowEvenCol"><%= bitstreams.get(i).getSize() %> bytes</td>
                 <td headers="t4" class="<%= row %>RowOddCol break-all">
                     <%= (bitstreams.get(i).getDescription() == null || bitstreams.get(i).getDescription().equals("")
                         ? LocaleSupport.getLocalizedMessage(pageContext, "jsp.submit.upload-file-list.empty1")

@@ -9,7 +9,7 @@
 --%>
 <%--
   - Collection home JSP
-  -
+  - Teste
   - Attributes required:
   -    collection  - Collection to render home page for
   -    community   - Community this collection is in
@@ -141,7 +141,7 @@
   <p class="copyrightText"><%= copyright %></p>
   
   <%-- Browse --%>
-  <div class="panel panel-primary">
+  <!--<div class="panel panel-primary">
   	<div class="panel-heading">
         <fmt:message key="jsp.general.browse"/>
 	</div>
@@ -160,7 +160,7 @@
 <%	
 	}
 %>	</div>
-</div>
+</div>-->
 <%  if (submit_button)
     { %>
           <form class="form-group" action="<%= request.getContextPath() %>/submit" method="post">
@@ -168,7 +168,7 @@
 			<input class="btn btn-success col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
           </form>
 <%  } %>
-        <form class="well" method="get" action="">
+        <!--<form class="well" method="get" action="">
 <%  if (loggedIn && subscribed)
     { %>
                 <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
@@ -210,7 +210,7 @@
     	</span><%
     }
 %>
-        </form>
+        </form>-->
 
 <div class="row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>

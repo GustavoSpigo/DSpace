@@ -37,7 +37,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.dspace-admin.confirm-delete-mdfield.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin">

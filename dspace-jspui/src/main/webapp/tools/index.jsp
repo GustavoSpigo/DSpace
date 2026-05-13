@@ -55,7 +55,7 @@
             naviAdmin = "community-or-collection-admin";
         }
 %>
-<dspace:layout style="submission" locbar="link" navbar="<%= naviAdmin %>" titlekey="jsp.administer">
+<dspace:layout style="submission" locbar="link" navbar="default" titlekey="jsp.administer">
     
     <%-- <h1>Administration Tools</h1> --%>
     <h1><fmt:message key="jsp.dspace-admin.index.heading"/></h1>

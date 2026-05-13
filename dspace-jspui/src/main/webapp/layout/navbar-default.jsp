@@ -45,6 +45,8 @@
     Boolean collectionAdmin = (Boolean)request.getAttribute("is.collectionAdmin");
     boolean isCollectionAdmin = (collectionAdmin == null ? false : collectionAdmin.booleanValue());
 
+    String siteName = ConfigurationManager.getProperty("dspace.name");
+
     // Get the current page, minus query string
     String currentPage = UIUtil.getOriginalURL(request);
     int c = currentPage.indexOf( '?' );
@@ -81,89 +83,63 @@
     Locale[] supportedLocales = I18nUtil.getSupportedLocales();
     Locale sessionLocale = UIUtil.getSessionLocale(request);
 %>
-
-
        <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" href="<%= request.getContextPath() %>/"><img height="25" src="<%= request.getContextPath() %>/image/dspace-logo-only.png" alt="DSpace logo" /></a>
        </div>
+
        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-         <ul class="nav navbar-nav">
-           <li class="<%= currentPage.endsWith("/home.jsp")? "active" : "" %>"><a href="<%= request.getContextPath() %>/"><span class="glyphicon glyphicon-home"></span> <fmt:message key="jsp.layout.navbar-default.home"/></a></li>
-                
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-default.browse"/> <b class="caret"></b></a>
-             <ul class="dropdown-menu">
-               <li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li>
-				<li class="divider"></li>
-        <li class="dropdown-header"><fmt:message key="jsp.layout.navbar-default.browseitemsby"/></li>
-				<%-- Insert the dynamic browse indices here --%>
-				
-				<%
-					for (int i = 0; i < bis.length; i++)
-					{
-						BrowseIndex bix = bis[i];
-						String key = "browse.menu." + bix.getName();
-					%>
-				      			<li><a href="<%= request.getContextPath() %>/browse?type=<%= bix.getName() %>"><fmt:message key="<%= key %>"/></a></li>
-					<%	
-					}
-				%>
-				    
-				<%-- End of dynamic browse indices --%>
+       <div>
+        <div class="siteName">Repositório Institucional do Conhecimento - RIC-CPS</div> 
+        
 
-            </ul>
-          </li>
-          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") %>"><fmt:message key="jsp.layout.navbar-default.help"/></dspace:popup></li>
-       </ul>
-
- <% if (supportedLocales != null && supportedLocales.length > 1)
-     {
- %>
-    <div class="nav navbar-nav navbar-right">
-	 <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-default.language"/><b class="caret"></b></a>
-        <ul class="dropdown-menu">
- <%
-    for (int i = supportedLocales.length-1; i >= 0; i--)
-     {
- %>
-      <li>
-        <a onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
-                  document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
-         <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
-       </a>
-      </li>
- <%
-     }
- %>
-     </ul>
-    </li>
-    </ul>
-  </div>
- <%
-   }
- %>
- 
-       <div class="nav navbar-nav navbar-right">
+</div>
+<div class="fundoMenu">
+  <a class="navbar-brand" href="https://www.cps.sp.gov.br/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 100 60" style="float: left;">
+  <path fill="#FFF" d="M69.347 25.342c.068-2.086.973-2.918 3.963-2.918h16.479v-5.842H74.354c-7.303 0-11.403 3.129-11.403 9.037 0 11.538 21.065 9.178 21.065 15.295 0 2.084-1.114 3.198-3.963 3.198H58.5c2.179-2.659 3.509-6.089 3.509-10.015 0-9.867-6.394-18.209-17.238-18.209-9.802 0-16.824 7.365-16.824 18.351v2.728H20.52c-5.77 0-11.469-3.754-11.469-10.846 0-7.089 5.699-10.844 11.469-10.844h4.729v-5.84h-5.838c-7.787 0-16.754 5.979-16.754 16.684 0 10.703 8.967 16.684 16.754 16.684h8.536v24.242h6.119V42.805h11.646v-5.838H34.066V35.35c0-9.175 4.866-13.621 10.705-13.621 6.534 0 11.123 4.792 11.123 11.607 0 5.855-3.173 9.656-8.184 10.776h-7.806v5.838h40.148c5.911 0 10.36-2.99 10.36-9.316.001-11.956-21.134-9.521-21.065-15.292z"></path>
+  </svg></a>
+  <a class="navbar-brand"href="https://cgd.cps.sp.gov.br/nucleo-de-biblioteca-nb-cgd/" style="padding: 9px 9px;" target="_blank">
+    <img height="28" src="<%= request.getContextPath() %>/image/nbcgd.png" alt="NB/CGD logo" />
+  </a>
+  <a class="navbar-brand"  href="<%= request.getContextPath() %>/"> 
+    <img height="25" src="<%= request.getContextPath() %>/image/ric-logo.png" alt="DSpace logo" />
+  </a>
+  
+  <ul class="nav navbar-nav">
+          <li class="<%= currentPage.endsWith("/about/")? "active" : "" %>"><a href="<%= request.getContextPath() %>/about"><i class="material-icons">info</i> <span id="msg-about"><fmt:message key="jsp.layout.navbar-default.about"/></span></a></li>
+          <li class="<%= ( currentPage.endsWith( "/controlledvocabulary/info.jsp" ) ? "active" : "" ) %>"><a href="<%= request.getContextPath() %>/controlledvocabulary/info.jsp"><i class="material-icons">spellcheck</i> Vocabulário Controlado</a></li>
+          <li class="<%= ( currentPage.endsWith( "/graphics/info.jsp" ) ? "active" : "" ) %>"><a href="<%= request.getContextPath() %>/graphics/info.jsp"><i class="material-icons">analytics</i> Relatórios</a></li>
+          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><a href="<%= request.getContextPath() %>/help/index.jsp"><i class="material-icons">help</i> <fmt:message key="jsp.layout.navbar-default.help"/></a></li>
+          <!--li class="<%= currentPage.endsWith("/contact/")? "active" : "" %>"><a id="lbl-contato" href="<%= request.getContextPath() %>/contact"><i class="material-icons">contact_support</i> <fmt:message key="jsp.register.profile-form.phone.field"/></a></li-->
+          <script>
+            label = "<fmt:message key="jsp.layout.navbar-default.about"/>";
+            document.getElementById("msg-about").innerHTML = label.replace("o DSpace","").replace("DSpace","");
+            label2 = "<fmt:message key="jsp.layout.navbar-default.home"/>"; 
+            document.getElementById("msg-home").innerHTML = label2.replace("Página inicial","").replace("Início","");
+          </script>
+          <% if (isAdmin || isCommunityAdmin || isCollectionAdmin) { %>
+            <li class="dropdown"><a href="#"><i class="material-icons">settings</i></a>
+              <div class="fundoMenu" id="menu-admin">
+                <jsp:include page="/layout/navbar-admin.jsp"/>
+              </div>
+            </li>
+          <% } %>
+  </ul>
+          <div class="nav navbar-nav navbar-right" style="display:table-cell">
 		<ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
          <%
     if (user != null)
     {
 		%>
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
-		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 20) %></fmt:param>
-		  </fmt:message> <b class="caret"></b></a>
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="material-icons">person</span> <b class="caret"></b></a>
 		<%
     } else {
 		%>
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.sign"/> <b class="caret"></b></a>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="material-icons">person_outline</span> <b class="caret"></b></a>
 	<% } %>             
              <ul class="dropdown-menu">
                <li><a href="<%= request.getContextPath() %>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a></li>
@@ -191,21 +167,35 @@
              </ul>
            </li>
           </ul>
-          
-	<%-- Search Box --%>
-	<form method="get" action="<%= request.getContextPath() %>/simple-search" class="navbar-form navbar-right">
-	    <div class="form-group">
-          <input type="text" class="form-control" placeholder="<fmt:message key="jsp.layout.navbar-default.search"/>" name="query" id="tequery" size="25"/>
-        </div>
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
-<%--               <br/><a href="<%= request.getContextPath() %>/advanced-search"><fmt:message key="jsp.layout.navbar-default.advanced"/></a>
-<%
-			if (ConfigurationManager.getBooleanProperty("webui.controlledvocabulary.enable"))
-			{
-%>        
-              <br/><a href="<%= request.getContextPath() %>/subject-search"><fmt:message key="jsp.layout.navbar-default.subjectsearch"/></a>
-<%
-            }
-%> --%>
-	</form></div>
+       
+	</div>
+  <% if (supportedLocales != null && supportedLocales.length > 1)
+     {
+ %>
+    <div class="nav navbar-nav navbar-right" style="margin-left: 20px;">
+	 <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="material-icons">translate</span><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+ <%
+    for (int i = supportedLocales.length-1; i >= 0; i--)
+     {
+ %>
+      <li>
+        <a onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
+                  document.repost.submit();" href="<%= request.getContextPath() %>?locale=<%=supportedLocales[i].toString()%>">
+         <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
+       </a>
+      </li>
+ <%
+     }
+ %>
+     </ul>
+    </li>
+    </ul>
+  </div>
+ <%
+   }
+ %>
+</div>
     </nav>

@@ -31,7 +31,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.tools.upload-bitstream.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin"
@@ -54,7 +54,7 @@
         <input type="hidden" name="item_id" value="<%= item.getID() %>"/>
 		<br/>
         <!-- <p align="center"><input type="submit" name="submit" value="Upload"></p> -->
-		<div class="row col-md-offset-5"><input class="btn btn-success col-md-4" type="submit" name="submit" value="<fmt:message key="jsp.tools.upload-bitstream.upload"/>" /></div>
+		<div class="container row col-md-offset-5"><input class="btn btn-success col-md-4" type="submit" name="submit" value="<fmt:message key="jsp.tools.upload-bitstream.upload"/>" /></div>
     </form>
     
 </dspace:layout>

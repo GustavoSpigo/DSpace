@@ -22,7 +22,7 @@
     
 <dspace:layout titlekey="jsp.dspace-admin.supervise-no-workspaceitem.title"
                style="submission"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parentlink="/dspace-admin"
                parenttitlekey="jsp.administer">

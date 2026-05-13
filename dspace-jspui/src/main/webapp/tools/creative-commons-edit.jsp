@@ -45,7 +45,7 @@
 		licenseURL = LicenseServiceFactory.getInstance().getCreativeCommonsService().getLicenseURL(context, item);
 %>
 
-<dspace:layout navbar="admin"
+<dspace:layout navbar="default"
                locbar="link"
                parentlink="/dspace-admin"
                parenttitlekey="jsp.administer"

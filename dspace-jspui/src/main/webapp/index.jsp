@@ -17,9 +17,7 @@
   -
   - This also means there's some business logic, basically some minimal stuff
   - from DSpaceServlet.java.  This shouldn't happen elsewhere in the JSPs.
-  --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
+  --%><%@ page contentType="text/html;charset=UTF-8" %>
 
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
 
@@ -39,7 +37,6 @@
 <%@ page import="org.dspace.core.LogManager" %>
 <%@ page import="org.dspace.core.factory.CoreServiceFactory" %>
 <%@ page import="org.dspace.plugin.SiteHomeProcessor" %>
-
 <%
     Context context = null;
     

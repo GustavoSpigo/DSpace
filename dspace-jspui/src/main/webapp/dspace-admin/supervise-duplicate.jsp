@@ -23,7 +23,7 @@
 <dspace:layout 
 			   style="submission"
 		       titlekey="jsp.dspace-admin.supervise-duplicate.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parentlink="/dspace-admin"
                parenttitlekey="jsp.administer">

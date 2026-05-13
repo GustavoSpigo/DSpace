@@ -151,7 +151,7 @@
 %>
 
 <dspace:layout style="submission" titlekey="jsp.tools.edit-collection.title"
-               navbar="<%= naviAdmin %>"
+               navbar="default"
                locbar="link"
                parentlink="<%= link %>"
                parenttitlekey="jsp.administer"

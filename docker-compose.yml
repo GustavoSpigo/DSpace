@@ -6,7 +6,6 @@
 # http://www.dspace.org/license/
 #
 
-version: '3.7'
 networks:
   dspacenet:
 services:
@@ -37,12 +36,21 @@ services:
     container_name: dspacedb
     environment:
       PGDATA: /pgdata
+      POSTGRES_PASSWORD: dspace
+      POSTGRES_USER: dspace
+      POSTGRES_DB: dspace
     image: dspace/dspace-postgres-pgcrypto
     networks:
       dspacenet:
     stdin_open: true
     tty: true
+    # Mount an initial DB dump and a restore script into the postgres init dir.
+    # The postgres image runs scripts in /docker-entrypoint-initdb.d on first init;
+    # the script will restore the DB only when the database cluster is new.
     volumes:
+    - ./backup.backup:/docker-entrypoint-initdb.d/backup.backup:ro
+    - ./dspace-dump/dspace.dump:/docker-entrypoint-initdb.d/dspace.dump:ro
+    - ./docker/db-init/restore.sh:/docker-entrypoint-initdb.d/restore.sh:ro
     - pgdata:/pgdata
 volumes:
   assetstore:

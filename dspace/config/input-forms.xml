@@ -5598,8 +5598,90 @@
                 <stored-value>Curso Superior de Tecnologia em Gestão Empresarial</stored-value>
             </pair>
         </value-pairs>
-
+        <value-pairs value-pairs-name="common_line" dc-term="local_subject_line">
+    <pair>
+        <displayed-value>Ciência, tecnologia e inovação para a inclusão social</displayed-value>
+        <stored-value>Ciência, tecnologia e inovação para a inclusão social</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Comunicação</displayed-value>
+        <stored-value>Comunicação</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Cultura e arte</displayed-value>
+        <stored-value>Cultura e arte</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Desenvolvimento regional: inclusão produtiva, defesa civil e acesso à água</displayed-value>
+        <stored-value>Desenvolvimento regional: inclusão produtiva, defesa civil e acesso à água</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Desenvolvimento rural: agroecologia e produção orgânica</displayed-value>
+        <stored-value>Desenvolvimento rural: agroecologia e produção orgânica</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Desenvolvimento urbano</displayed-value>
+        <stored-value>Desenvolvimento urbano</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Direitos humanos</displayed-value>
+        <stored-value>Direitos humanos</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Educação</displayed-value>
+        <stored-value>Educação</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Esporte e lazer</displayed-value>
+        <stored-value>Esporte e lazer</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Geração de trabalho e renda por meio do apoio e fortalecimento de empreendimentos econômicos solidários</displayed-value>
+        <stored-value>Geração de trabalho e renda por meio do apoio e fortalecimento de empreendimentos econômicos solidários</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Justiça: cidadania, inclusão e direitos</displayed-value>
+        <stored-value>Justiça: cidadania, inclusão e direitos</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Meio ambiente e recursos naturais</displayed-value>
+        <stored-value>Meio ambiente e recursos naturais</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Modernização da gestão pública</displayed-value>
+        <stored-value>Modernização da gestão pública</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Mulheres e relações de gênero</displayed-value>
+        <stored-value>Mulheres e relações de gênero</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Pesca e aquicultura</displayed-value>
+        <stored-value>Pesca e aquicultura</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Preservação do patrimônio cultural brasileiro</displayed-value>
+        <stored-value>Preservação do patrimônio cultural brasileiro</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Promoção da igualdade racial</displayed-value>
+        <stored-value>Promoção da igualdade racial</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Promoção da saúde</displayed-value>
+        <stored-value>Promoção da saúde</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Redução das desigualdades sociais e combate à extrema pobreza</displayed-value>
+        <stored-value>Redução das desigualdades sociais e combate à extrema pobreza</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Relação entre estado e sociedade, promoção da participação social e políticas para a juventude</displayed-value>
+        <stored-value>Relação entre estado e sociedade, promoção da participação social e políticas para a juventude</stored-value>
+    </pair>
+</value-pairs>
         
     </form-value-pairs>
+
 
 </input-forms>

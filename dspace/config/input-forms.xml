@@ -1455,7 +1455,7 @@
                     <input-type>textarea</input-type>
                     <hint>Informe a apresentação do projeto em idioma pátrio</hint>
                     <required>Favor informar</required>
-                </field>
+                </field> 
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>contributor</dc-element>

@@ -369,7 +369,6 @@
     <!-- serves as a 'this field is required' flag.                           -->
 
     <form-definitions>
-
         <form name="traditional">
             <page number="1">
                 <field>
@@ -2160,12 +2159,12 @@
                 <stored-value>Curso Superior de Tecnologia em Conservação e Restauro </stored-value>
             </pair>
             <pair>
-                <displayed-value>Curso Superior de Tecnologia em Construção Civil – Modalidade Edifícios </displayed-value>
-                <stored-value>Curso Superior de Tecnologia em Construção Civil – Modalidade Edifícios </stored-value>
+                <displayed-value>Curso Superior de Tecnologia em Construção Civil - Modalidade Edifícios </displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Construção Civil - Modalidade Edifícios </stored-value>
             </pair>
             <pair>
-                <displayed-value>Curso Superior de Tecnologia em Construção Civil – Modalidade Movimento de Terra e Pavimentação </displayed-value>
-                <stored-value>Curso Superior de Tecnologia em Construção Civil – Modalidade Movimento de Terra e Pavimentação </stored-value>
+                <displayed-value>Curso Superior de Tecnologia em Construção Civil - Modalidade Movimento de Terra e Pavimentação </displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Construção Civil - Modalidade Movimento de Terra e Pavimentação </stored-value>
             </pair>
             <pair>
                 <displayed-value>Curso Superior de Tecnologia em Construção de Edifícios </displayed-value>
@@ -4813,25 +4812,8 @@
                 <displayed-value>309 - Faculdade de Tecnologia - FATEC de Atibaia</displayed-value>
                 <stored-value>309</stored-value>
             </pair>
-			</value-pairs>
-        <!--value-pairs value-pairs-name="common_acesso" dc-term="publisher">
-            <pair>
-                <displayed-value>Acesso Fechado</displayed-value>
-                <stored-value>info:eu-repo/semantics/closedAccess</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Acesso Embargado</displayed-value>
-                <stored-value>info:eu-repo/semantics/embargoedAccess</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Acesso Restrito</displayed-value>
-                <stored-value>info:eu-repo/semantics/restrictedAccess</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Acesso Aberto</displayed-value>
-                <stored-value>info:eu-repo/semantics/openAccess</stored-value>
-            </pair>
-        </value-pairs--> 
+
+		</value-pairs>
 		<value-pairs value-pairs-name="common_sponsorship_pos" dc-term="sponsorship">
             <pair>
                 <displayed-value>Mestrado Profissional em Gestão e Tecnologia em Sistemas Produtivos</displayed-value>
@@ -5005,8 +4987,8 @@
                 <displayed-value>GTSP - Linha de Pesquisa: Sistemas Organizacionais - Projeto de pesquisa: Gestão e Desenvolvimento da Inovação para Criação de Valor</displayed-value>
                 <stored-value>GTSP - Linha de Pesquisa: Sistemas Organizacionais - Projeto de pesquisa: Gestão e Desenvolvimento da Inovação para Criação de Valor</stored-value>
             </pair>
-		</value-pairs>
 
+		</value-pairs>
         <value-pairs value-pairs-name="common_types_tcc" dc-term="type">
             <pair>
                 <displayed-value>Artigo Científico</displayed-value>
@@ -5037,8 +5019,8 @@
                 <stored-value>Parecer Técnico</stored-value>
             </pair>
             <pair>
-                <displayed-value>Pesquisa, Desenvolvimento e Inovação – PDI</displayed-value>
-                <stored-value>Pesquisa, Desenvolvimento e Inovação – PDI</stored-value>
+                <displayed-value>Pesquisa, Desenvolvimento e Inovação - PDI</displayed-value>
+                <stored-value>Pesquisa, Desenvolvimento e Inovação - PDI</stored-value>
             </pair>
             <pair>
                 <displayed-value>Plano de Negócios</displayed-value>
@@ -5061,7 +5043,6 @@
                 <stored-value>Relatório Técnico</stored-value>
             </pair>
         </value-pairs>
-        
 		<value-pairs value-pairs-name="common_types_pos" dc-term="type">
             <pair>
                 <displayed-value>Dissertação</displayed-value>
@@ -5074,14 +5055,12 @@
                 <stored-value>UPEP - Unidade de Pós-graduação, Extensão e Pesquisa</stored-value>
             </pair>
 		</value-pairs>
-
         <value-pairs value-pairs-name="common_types_ead_polo" dc-term="type">
             <pair>
                 <displayed-value>Artigo Científico</displayed-value>
                 <stored-value>Artigo Científico</stored-value>
             </pair>
         </value-pairs>
-
         <value-pairs value-pairs-name="common_types_ead" dc-term="type">
             <pair>
                 <displayed-value>Artigo Científico</displayed-value>
@@ -5112,8 +5091,8 @@
                 <stored-value>Parecer Técnico</stored-value>
             </pair>
             <pair>
-                <displayed-value>Pesquisa, Desenvolvimento e Inovação – PDI</displayed-value>
-                <stored-value>Pesquisa, Desenvolvimento e Inovação – PDI</stored-value>
+                <displayed-value>Pesquisa, Desenvolvimento e Inovação - PDI</displayed-value>
+                <stored-value>Pesquisa, Desenvolvimento e Inovação - PDI</stored-value>
             </pair>
             <pair>
                 <displayed-value>Plano de Negócios</displayed-value>
@@ -5170,8 +5149,8 @@
                 <stored-value>Maquete</stored-value>
             </pair>
             <pair>
-                <displayed-value>Modelos de Cardápios – Ficha Técnica de Alimentos e Bebidas</displayed-value>
-                <stored-value>Modelos de Cardápios – Ficha Técnica de Alimentos e Bebidas</stored-value>
+                <displayed-value>Modelos de Cardápios - Ficha Técnica de Alimentos e Bebidas</displayed-value>
+                <stored-value>Modelos de Cardápios - Ficha Técnica de Alimentos e Bebidas</stored-value>
             </pair>
             <pair>
                 <displayed-value>Modelos de Manuais</displayed-value>
@@ -5198,7 +5177,6 @@
                 <stored-value>-</stored-value>
             </pair>
         </value-pairs>
-
         <value-pairs value-pairs-name="common_products_tcc" dc-term="type">
             <pair>
                 <displayed-value>Apresentações Musicais, de Dança e Teatrais</displayed-value>
@@ -5237,8 +5215,8 @@
                 <stored-value>Maquete</stored-value>
             </pair>
             <pair>
-                <displayed-value>Modelos de Cardápios – Ficha Técnica de Alimentos e Bebidas</displayed-value>
-                <stored-value>Modelos de Cardápios – Ficha Técnica de Alimentos e Bebidas</stored-value>
+                <displayed-value>Modelos de Cardápios - Ficha Técnica de Alimentos e Bebidas</displayed-value>
+                <stored-value>Modelos de Cardápios - Ficha Técnica de Alimentos e Bebidas</stored-value>
             </pair>
             <pair>
                 <displayed-value>Modelos de Manuais</displayed-value>
@@ -5265,7 +5243,6 @@
                 <stored-value>-</stored-value>
             </pair>
         </value-pairs>
-        
         <value-pairs value-pairs-name="common_products_pos" dc-term="type">
             <pair>
                 <displayed-value>-</displayed-value>
@@ -5312,55 +5289,54 @@
                 <stored-value>GTSP - Relatório Técnico Conclusivo</stored-value>
             </pair>
             <pair>
-                <displayed-value>GTSP – Software / Aplicativo (Programa de Computador)</displayed-value>
-                <stored-value>GTSP – Software / Aplicativo (Programa de Computador)</stored-value>
+                <displayed-value>GTSP - Software / Aplicativo (Programa de Computador)</displayed-value>
+                <stored-value>GTSP - Software / Aplicativo (Programa de Computador)</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Apresentação Trabalho Eventos Nacionais / Internacionais com ISSN, na área de Educação</displayed-value>
-                <stored-value>GDEP – Apresentação Trabalho Eventos Nacionais / Internacionais com ISSN, na área de Educação</stored-value>
+                <displayed-value>GDEP - Apresentação Trabalho Eventos Nacionais / Internacionais com ISSN, na área de Educação</displayed-value>
+                <stored-value>GDEP - Apresentação Trabalho Eventos Nacionais / Internacionais com ISSN, na área de Educação</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Desenvolvimento de Aplicativo vinculado à Educação</displayed-value>
-                <stored-value>GDEP – Desenvolvimento de Aplicativo vinculado à Educação</stored-value>
+                <displayed-value>GDEP - Desenvolvimento de Aplicativo vinculado à Educação</displayed-value>
+                <stored-value>GDEP - Desenvolvimento de Aplicativo vinculado à Educação</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Desenvolvimento de Material Didático e Instrucional</displayed-value>
-                <stored-value>GDEP – Desenvolvimento de Material Didático e Instrucional</stored-value>
+                <displayed-value>GDEP - Desenvolvimento de Material Didático e Instrucional</displayed-value>
+                <stored-value>GDEP - Desenvolvimento de Material Didático e Instrucional</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Desenvolvimento de Produto vinculado à Educação</displayed-value>
-                <stored-value>GDEP – Desenvolvimento de Produto vinculado à Educação</stored-value>
+                <displayed-value>GDEP - Desenvolvimento de Produto vinculado à Educação</displayed-value>
+                <stored-value>GDEP - Desenvolvimento de Produto vinculado à Educação</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Desenvolvimento de Técnicas vinculadas à Educação</displayed-value>
-                <stored-value>GDEP – Desenvolvimento de Técnicas vinculadas à Educação</stored-value>
+                <displayed-value>GDEP - Desenvolvimento de Técnicas vinculadas à Educação</displayed-value>
+                <stored-value>GDEP - Desenvolvimento de Técnicas vinculadas à Educação</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Editoria de Periódico com Qualis na área de Educação</displayed-value>
-                <stored-value>GDEP – Editoria de Periódico com Qualis na área de Educação</stored-value>
+                <displayed-value>GDEP - Editoria de Periódico com Qualis na área de Educação</displayed-value>
+                <stored-value>GDEP - Editoria de Periódico com Qualis na área de Educação</stored-value>
             </pair>
             <pair>
                 <displayed-value>GDEP - Organização de Eventos Nacionais / Internacionais com Anais, com ISSN, na área de Educação</displayed-value>
                 <stored-value>GDEP - Organização de Eventos Nacionais / Internacionais com Anais, com ISSN, na área de Educação</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Patente</displayed-value>
-                <stored-value>GDEP – Patente</stored-value>
+                <displayed-value>GDEP - Patente</displayed-value>
+                <stored-value>GDEP - Patente</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Relatório de Pesquisa Financiada Finalizado</displayed-value>
-                <stored-value>GDEP – Relatório de Pesquisa Financiada Finalizado</stored-value>
+                <displayed-value>GDEP - Relatório de Pesquisa Financiada Finalizado</displayed-value>
+                <stored-value>GDEP - Relatório de Pesquisa Financiada Finalizado</stored-value>
             </pair>
             <pair>
-                <displayed-value>GDEP – Serviços Técnicos (consultoria, comitê, etc)</displayed-value>
-                <stored-value>GDEP – Serviços Técnicos (consultoria, comitê, etc)</stored-value>
+                <displayed-value>GDEP - Serviços Técnicos (consultoria, comitê, etc)</displayed-value>
+                <stored-value>GDEP - Serviços Técnicos (consultoria, comitê, etc)</stored-value>
             </pair>
         </value-pairs>
-
         <value-pairs value-pairs-name="common_publisher_ead" dc-term="publisher">
             <pair>
-                <displayed-value>CETEC – GEEAD (Unidade de Ensino Médio e Técnico- Grupo de Estudo de Educação à Distância )</displayed-value>
-                <stored-value>CETEC – GEEAD (Unidade de Ensino Médio e Técnico- Grupo de Estudo de Educação à Distância )</stored-value>
+                <displayed-value>CETEC - GEEAD (Unidade de Ensino Médio e Técnico- Grupo de Estudo de Educação à Distância )</displayed-value>
+                <stored-value>CETEC - GEEAD (Unidade de Ensino Médio e Técnico- Grupo de Estudo de Educação à Distância )</stored-value>
             </pair>
         </value-pairs>
         <value-pairs value-pairs-name="common_publisher_polo_ead" dc-term="publisher">
@@ -5549,8 +5525,8 @@
         </value-pairs>
         <value-pairs value-pairs-name="common_publisher_cesu_ead" dc-term="publisher">
             <pair>
-                <displayed-value>002 – Fatec São Paulo (Bom Retiro – São Paulo) </displayed-value>
-                <stored-value>002 – Fatec São Paulo (Bom Retiro – São Paulo) </stored-value>
+                <displayed-value>002 - Fatec São Paulo (Bom Retiro - São Paulo) </displayed-value>
+                <stored-value>002 - Fatec São Paulo (Bom Retiro - São Paulo) </stored-value>
             </pair>
         </value-pairs>
         <value-pairs value-pairs-name="common_sponsorship_ead" dc-term="sponsorship">

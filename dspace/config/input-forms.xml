@@ -1466,16 +1466,6 @@
                     <hint>Informe o nome do coordenador</hint>
                     <required>Favor inserir</required>
                 </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>identifiercoordinator</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Número da Matrícula do(a) Coordenador(a)</label>
-                    <input-type>onebox</input-type>
-                    <hint>Informe a matrícula do coordenador</hint>
-                    <required>Favor inserir</required>
-                </field>
             </page>
             <page number="2">
                 <field>

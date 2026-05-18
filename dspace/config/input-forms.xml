@@ -1631,16 +1631,6 @@
             <page number="2">
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>description</dc-element>
-                    <dc-qualifier>abstract</dc-qualifier>
-                    <repeatable>true</repeatable>
-                    <label>Apresentação do Projeto</label>
-                    <input-type>textarea</input-type>
-                    <hint>Informe o escopo do projeto em idioma pátrio</hint>
-                    <required>Favor informar</required>
-                </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
                     <dc-element>subject</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
@@ -1649,56 +1639,6 @@
                     <hint>Informe as palavras-chave</hint>
                     <required></required>
                     <vocabulary closed="true">riccps</vocabulary>
-                </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>subject</dc-element>
-                    <dc-qualifier>other</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Eixo Tecnológico</label>
-                    <input-type value-pairs-name="common_axis">dropdown</input-type>
-                    <hint>Selecione o eixo tecnológico</hint>
-                    <required>Favor informar</required>
-                </field>
-                <field>
-                    <dc-schema>dcterms</dc-schema>
-                    <dc-element>subject</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Áreas temáticas de extensão</label>
-                    <input-type value-pairs-name="extensao_subjects">dropdown</input-type>
-                    <hint>Selecione a área temática</hint>
-                    <required>Favor informar</required>
-                </field>
-                <field>
-                    <dc-schema>dcterms</dc-schema>
-                    <dc-element>tableOfContents</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Linha de temática</label>
-                    <input-type value-pairs-name="common_tableOfContents">dropdown</input-type>
-                    <hint>Selecione a linha temática</hint>
-                    <required>Favor informar</required>
-                </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>contributor</dc-element>
-                    <dc-qualifier>other</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Fomento / Patrocínio</label>
-                    <input-type>onebox</input-type>
-                    <hint>Informe a instituição patrocinadora (se houver)</hint>
-                    <required></required>
-                </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>description</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Descrição do ítem</label>
-                    <input-type>textarea</input-type>
-                    <hint>Digite qualquer outra descrição ou comentários abaixo.</hint>
-                    <required></required>
                 </field>
             </page>
         </form>

@@ -1634,9 +1634,9 @@
                     <dc-element>description</dc-element>
                     <dc-qualifier>abstract</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Apresentação (Escopo) do Projeto</label>
+                    <label>Apresentação do Projeto</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe a apresentação do projeto em idioma pátrio</hint>
+                    <hint>Informe o escopo do projeto em idioma pátrio</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1683,7 +1683,7 @@
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>contributor</dc-element>
-                    <dc-qualifier></dc-qualifier>
+                    <dc-qualifier>other</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Fomento / Patrocínio</label>
                     <input-type>onebox</input-type>
@@ -1695,9 +1695,9 @@
                     <dc-element>description</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Descrição do item</label>
+                    <label>Descrição do ítem</label>
                     <input-type>textarea</input-type>
-                    <hint>Informações adicionais do projeto</hint>
+                    <hint>Digite qualquer outra descrição ou comentários abaixo.</hint>
                     <required></required>
                 </field>
             </page>

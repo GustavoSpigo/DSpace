@@ -1435,52 +1435,298 @@
 
 
         <form name="extensao">
-            <page number="1">
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>title</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Título: subtítulo</label>
-                    <input-type>onebox</input-type>
-                    <hint>Informe o título principal e o subtítulo do Projeto de Extensão</hint>
-                    <required>Favor inserir</required>
-                </field>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>description</dc-element>
-                    <dc-qualifier>abstract</dc-qualifier>
-                    <repeatable>true</repeatable>
-                    <label>Apresentação (Escopo) do Projeto</label>
-                    <input-type>textarea</input-type>
-                    <hint>Informe a apresentação do projeto em idioma pátrio</hint>
-                    <required>Favor informar</required>
-                </field> 
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>contributor</dc-element>
-                    <dc-qualifier>coordinator</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Nome do Coordenador(a) de curso</label>
-                    <input-type>name</input-type>
-                    <hint>Informe o nome do coordenador</hint>
-                    <required>Favor inserir</required>
-                </field>
-            </page>
-            <page number="2">
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>subject</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>true</repeatable>
-                    <label>Palavras-chave</label>
-                    <input-type>twobox</input-type>
-                    <hint>Informe as palavras-chave</hint>
-                    <required></required>
-                    <vocabulary closed="true">riccps</vocabulary>
-                </field>
-            </page>
-        </form>
+    <!-- ============================================== -->
+    <!-- PÁGINA 1                                       -->
+    <!-- ============================================== -->
+    <page number="1">
+        
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>title</dc-element>
+            <repeatable>false</repeatable>
+            <label>Título: subtítulo</label>
+            <input-type>onebox</input-type>
+            <hint>Informe o título principal e o subtítulo do Projeto de Extensão Curricularizada, em idioma pátrio.</hint>
+            <required>O título do projeto é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>contributor</dc-element>
+            <dc-qualifier>advisor</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Nome do Coordenador(a) de curso</label>
+            <input-type>name</input-type>
+            <hint>Informe o(s) nome(s) do(s) Coordenador(es).</hint>
+            <required>O nome do coordenador é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>coordinator</dc-element>
+            <dc-qualifier>identifier</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Número da Matrícula do(a) Coordenador(a)</label>
+            <input-type>onebox</input-type>
+            <hint>Informe a matrícula do Coordenador.</hint>
+            <required>A matrícula do coordenador é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>contributor</dc-element>
+            <dc-qualifier>author</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Nome do Professor Responsável</label>
+            <input-type>name</input-type>
+            <hint>Informe o nome do Professor Responsável.</hint>
+            <required>O nome do professor responsável é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>professor</dc-element>
+            <dc-qualifier>identifier</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Número da Matrícula do(a) Professor(a) Responsável</label>
+            <input-type>onebox</input-type>
+            <hint>Informe a matrícula do Professor Responsável.</hint>
+            <required>A matrícula do professor responsável é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>contributor</dc-element>
+            <dc-qualifier>other</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Nome(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
+            <input-type>name</input-type>
+            <hint>Informe o(s) nome(s) do(s) Professor(es) e/ou Colaborador(es).</hint>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>contributor</dc-element>
+            <dc-qualifier>identifier</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Número da Matrícula do(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
+            <input-type>onebox</input-type>
+            <hint>Informe a matrícula do(s) Professor(es) e/ou Colaborador(es).</hint>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>student</dc-element>
+            <dc-qualifier>count</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Quantidade de alunos participantes</label>
+            <input-type>onebox</input-type>
+            <hint>Informe o número total de alunos que participaram do Projeto de Extensão Curricularizada.</hint>
+            <required>A quantidade de alunos participantes é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>student</dc-element>
+            <dc-qualifier>identifier</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Número da Matrícula do(s) aluno(s) participante(s)</label>
+            <input-type>onebox</input-type>
+            <hint>Informe o(s) Registro(s) do(s) aluno(s) (RA).</hint>
+            <required>A(s) matrícula(s) do(s) aluno(s) é(são) obrigatória(s).</required>
+        </field>
+
+        <field>
+            <dc-schema>dcterms</dc-schema>
+            <dc-element>audience</dc-element>
+            <repeatable>false</repeatable>
+            <label>Descrição do perfil do Público-alvo</label>
+            <input-type>textarea</input-type>
+            <hint>Informe o perfil do grupo, comunidade ou organização beneficiada pelo projeto.</hint>
+            <required>A descrição do perfil do público-alvo é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>audience</dc-element>
+            <dc-qualifier>count</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Quantidade de pessoas atendidas pelo projeto (Público-alvo)</label>
+            <input-type>onebox</input-type>
+            <hint>Informe o quantitativo de beneficiados pela ação.</hint>
+            <required>O quantitativo de pessoas atendidas é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>date</dc-element>
+            <dc-qualifier>issued</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Data do documento</label>
+            <input-type>date</input-type>
+            <hint>Informe a data de conclusão do projeto.</hint>
+            <required>A data do documento é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>type</dc-element>
+            <repeatable>false</repeatable>
+            <label>Tipo Documental</label>
+            <input-type value-pairs-name="common_types">dropdown</input-type>
+            <hint>Informe o tipo documental adotado no trabalho.</hint>
+            <required>O tipo documental é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>project</dc-element>
+            <dc-qualifier>product</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Produto</label>
+            <input-type value-pairs-name="common_products_tcc">dropdown</input-type>
+            <hint>Informe o produto (Se houver).</hint>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>publisher</dc-element>
+            <repeatable>false</repeatable>
+            <label>Casa publicadora: Unidade de Ensino</label>
+            <input-type value-pairs-name="common_publisher">dropdown</input-type>
+            <hint>Informe a casa publicadora (Unidade de Ensino).</hint>
+            <required>A casa publicadora é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>course</dc-element>
+            <repeatable>true</repeatable>
+            <label>Curso</label>
+            <!-- Você usava 'common_sponsorship' para listar os cursos. Mantive a mesma! -->
+            <input-type value-pairs-name="common_sponsorship">list</input-type>
+            <hint>Informe o curso ao qual o trabalho está vinculado.</hint>
+            <required>O curso é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>discipline</dc-element>
+            <repeatable>true</repeatable>
+            <label>Disciplina curricularizada</label>
+            <input-type>onebox</input-type>
+            <hint>Informe o(s) Componentes(s) curricular(es) envolvido(s) na execução.</hint>
+            <required>A disciplina é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>format</dc-element>
+            <dc-qualifier>extent</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Carga horária</label>
+            <input-type>onebox</input-type>
+            <hint>Carga horária do projeto de extensão.</hint>
+            <required>A carga horária é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>coverage</dc-element>
+            <dc-qualifier>temporal</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Período do Projeto</label>
+            <!-- Esta lista precisará ser criada nas configurações de form-value-pairs -->
+            <input-type value-pairs-name="common_period">dropdown</input-type>
+            <hint>Informe se o Projeto de Extensão Curricularizada é semestral ou anual.</hint>
+            <required>O período do projeto é obrigatório.</required>
+        </field>
+        
+    </page>
+
+    <!-- ============================================== -->
+    <!-- PÁGINA 2                                       -->
+    <!-- ============================================== -->
+    <page number="2">
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>description</dc-element>
+            <dc-qualifier>abstract</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Apresentação (Escopo) do Projeto</label>
+            <input-type>textarea</input-type>
+            <hint>Informe a apresentação do Projeto de Extensão Curricularizada, no idioma pátrio.</hint>
+            <required>A apresentação do projeto é obrigatória.</required>
+        </field>
+        
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>subject</dc-element>
+            <repeatable>true</repeatable>
+            <label>Palavras-chave</label>
+            <input-type>twobox</input-type>
+            <hint>Insira as palavras-chave relacionadas ao projeto.</hint>
+            <required>Pelo menos uma palavra-chave é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>subject</dc-element>
+            <dc-qualifier>axis</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Eixo Tecnológico</label>
+            <!-- Aproveitando a lista common_axis que você já criou -->
+            <input-type value-pairs-name="common_axis">list</input-type>
+            <hint>Informe o eixo tecnológico do curso.</hint>
+            <required>O eixo tecnológico é obrigatório.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>subject</dc-element>
+            <dc-qualifier>area</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Áreas temáticas de extensão</label>
+            <!-- Esta lista precisará ser criada nas configurações de form-value-pairs -->
+            <input-type value-pairs-name="common_area">list</input-type>
+            <hint>Informe a área temática à qual o Projeto de Extensão Curricularizada é vinculado.</hint>
+            <required>A área temática é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>local</dc-schema>
+            <dc-element>subject</dc-element>
+            <dc-qualifier>line</dc-qualifier>
+            <repeatable>true</repeatable>
+            <label>Linha de temática</label>
+            <!-- Esta lista precisará ser criada nas configurações de form-value-pairs -->
+            <input-type value-pairs-name="common_line">list</input-type>
+            <hint>Informe a linha temática do Projeto de Extensão Curricularizada.</hint>
+            <required>A linha temática é obrigatória.</required>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>description</dc-element>
+            <dc-qualifier>sponsorship</dc-qualifier>
+            <repeatable>false</repeatable>
+            <label>Fomento / Patrocínio</label>
+            <input-type>onebox</input-type>
+            <hint>Informe a instituição patrocinadora do Projeto de Extensão Curricularizada (se houver).</hint>
+        </field>
+
+        <field>
+            <dc-schema>dc</dc-schema>
+            <dc-element>description</dc-element>
+            <repeatable>false</repeatable>
+            <label>Descrição do item</label>
+            <input-type>textarea</input-type>
+            <hint>Inclua informações adicionais de descrição do Projeto de Extensão Curricularizada.</hint>
+        </field>
+        
+    </page>
+</form>
 
     </form-definitions>
 

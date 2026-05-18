@@ -1468,8 +1468,8 @@
                 </field>
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>identifier</dc-element>
-                    <dc-qualifier>coordinator</dc-qualifier>
+                    <dc-element>identifiercoordinator</dc-element>
+                    <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Número da Matrícula do(a) Coordenador(a)</label>
                     <input-type>onebox</input-type>

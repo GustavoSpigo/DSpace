@@ -1446,6 +1446,16 @@
                     <hint>Informe o título principal e o subtítulo do Projeto de Extensão</hint>
                     <required>Favor inserir</required>
                 </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>abstract</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Apresentação (Escopo) do Projeto</label>
+                    <input-type>textarea</input-type>
+                    <hint>Informe a apresentação do projeto em idioma pátrio</hint>
+                    <required>Favor informar</required>
+                </field>
             </page>
             <page number="2">
                 <field>

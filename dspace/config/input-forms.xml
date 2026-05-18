@@ -1601,7 +1601,7 @@
         <field>
             <dc-schema>local</dc-schema>
             <dc-element>course</dc-element>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <label>Curso</label>
             <!-- Você usava 'common_sponsorship' para listar os cursos. Mantive a mesma! -->
             <input-type value-pairs-name="common_sponsorship">dropdown</input-type>

@@ -1604,7 +1604,7 @@
             <repeatable>true</repeatable>
             <label>Curso</label>
             <!-- Você usava 'common_sponsorship' para listar os cursos. Mantive a mesma! -->
-            <input-type value-pairs-name="common_sponsorship">list</input-type>
+            <input-type value-pairs-name="common_sponsorship">dropdown</input-type>
             <hint>Informe o curso ao qual o trabalho está vinculado.</hint>
             <required>O curso é obrigatório.</required>
         </field>

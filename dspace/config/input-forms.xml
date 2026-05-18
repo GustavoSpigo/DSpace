@@ -1637,7 +1637,7 @@
             <repeatable>false</repeatable>
             <label>Período do Projeto</label>
             <!-- Esta lista precisará ser criada nas configurações de form-value-pairs -->
-            <input-type value-pairs-name="common_period">dropdown</input-type>
+            <input-type value-pairs-name="common_project_period">dropdown</input-type>
             <hint>Informe se o Projeto de Extensão Curricularizada é semestral ou anual.</hint>
             <required>O período do projeto é obrigatório.</required>
         </field>
@@ -5680,7 +5680,40 @@
         <stored-value>Relação entre estado e sociedade, promoção da participação social e políticas para a juventude</stored-value>
     </pair>
 </value-pairs>
-        
+        <value-pairs value-pairs-name="common_area" dc-term="local_subject_area">
+    <pair>
+        <displayed-value>Comunicação</displayed-value>
+        <stored-value>Comunicação</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Cultura</displayed-value>
+        <stored-value>Cultura</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Direitos humanos e justiça</displayed-value>
+        <stored-value>Direitos humanos e justiça</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Educação</displayed-value>
+        <stored-value>Educação</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Meio ambiente</displayed-value>
+        <stored-value>Meio ambiente</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Saúde</displayed-value>
+        <stored-value>Saúde</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Tecnologia e produção</displayed-value>
+        <stored-value>Tecnologia e produção</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Trabalho</displayed-value>
+        <stored-value>Trabalho</stored-value>
+    </pair>
+</value-pairs>
     </form-value-pairs>
 
 

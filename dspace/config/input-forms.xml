@@ -345,6 +345,7 @@
         <name-map collection-handle="123456789/19010" form-name="tcc_geead" />
         <name-map collection-handle="123456789/19012" form-name="tcc_ad" />
 		<name-map collection-handle="123456789/4850" form-name="tcc" />
+        <name-map collection-handle="123456789/42863" form-name="extensao" />
         
         
 		
@@ -1428,6 +1429,263 @@
                     <label>Descrição do ítem</label>
                     <input-type>textarea</input-type>
                     <hint>Digite qualquer outra descrição ou comentários abaixo.</hint>
+                    <required></required>
+                </field>
+            </page>
+        </form>
+
+        <form name="extensao">
+            <page number="1">
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Título: Subtítulo</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe o título principal e subtítulo do Projeto de Extensão Curricularizada, em idioma pátrio</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>abstract</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Apresentação (Escopo)</label>
+                    <input-type>textarea</input-type>
+                    <hint>Informe a apresentação do Projeto de Extensão Curricularizada, no idioma pátrio</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>advisor</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Nome do Coordenador</label>
+                    <input-type>name</input-type>
+                    <hint>Informe o nome do Coordenador. Formato: Último nome ESPAÇO Primeiro nome</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>coordinator</dc-element>
+                    <dc-qualifier>identifier</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Matrícula do Coordenador</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe a matrícula do Coordenador</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>author</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Professor Responsável</label>
+                    <input-type>name</input-type>
+                    <hint>Informe o nome do Professor Responsável. Formato: Último nome ESPAÇO Primeiro nome</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>professor</dc-element>
+                    <dc-qualifier>identifier</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Matrícula do Professor</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe a matrícula do Professor Responsável</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>other</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Professores Colaboradores</label>
+                    <input-type>name</input-type>
+                    <hint>Informe o nome dos Professores e/ou Colaboradores</hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>identifier</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Matrícula dos Colaboradores</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe a matrícula dos Professores e/ou Colaboradores</hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>student</dc-element>
+                    <dc-qualifier>count</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Quantidade de Alunos</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe o número total de alunos que participaram</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>student</dc-element>
+                    <dc-qualifier>identifier</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Matrícula dos Alunos</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe o(s) Registro(s) do(s) aluno(s) (RA)</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Perfil do Público-alvo</label>
+                    <input-type>textarea</input-type>
+                    <hint>Informe o perfil do grupo, comunidade ou organização beneficiada</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier>count</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Quantidade de Beneficiados</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe o quantitativo de beneficiados pela ação</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Data de Conclusão</label>
+                    <input-type>date</input-type>
+                    <hint>Informe a data de conclusão. Padrão: mês/ano</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Tipo Documental</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe o tipo documental adotado no trabalho</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>project</dc-element>
+                    <dc-qualifier>product</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Produto</label>
+                    <input-type value-pairs-name="common_extension_products">dropdown</input-type>
+                    <hint>Informe o produto gerado (selecione na lista)</hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>publisher</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Unidade de Ensino</label>
+                    <input-type>onebox</input-type>
+                    <hint>Casa publicadora: Unidade de Ensino (preenchimento automático)</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>course</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Curso</label>
+                    <input-type value-pairs-name="common_extension_courses">dropdown</input-type>
+                    <hint>Informe o curso ao qual o projeto está vinculado</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>discipline</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Disciplina Curricularizada</label>
+                    <input-type value-pairs-name="common_extension_disciplines">dropdown</input-type>
+                    <hint>Informe o(s) Componente(s) curricular(es) envolvido(s)</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>format</dc-element>
+                    <dc-qualifier>extent</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Carga Horária</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe a carga horária do projeto de extensão</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>coverage</dc-element>
+                    <dc-qualifier>temporal</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Período do Projeto</label>
+                    <input-type value-pairs-name="common_extension_periods">dropdown</input-type>
+                    <hint>Informe se o projeto é semestral ou anual</hint>
+                    <required>Favor informar</required>
+                </field>
+            </page>
+            <page number="2">
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Palavras-chave</label>
+                    <input-type>onebox</input-type>
+                    <hint>Informe palavras-chave separadas por ponto e vírgula</hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>area</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Áreas Temáticas</label>
+                    <input-type value-pairs-name="common_extension_areas">dropdown</input-type>
+                    <hint>Informe a área temática do Projeto de Extensão</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>line</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Linha Temática</label>
+                    <input-type value-pairs-name="common_extension_lines">dropdown</input-type>
+                    <hint>Informe a linha temática do Projeto de Extensão</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>sponsorship</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Fomento / Patrocínio</label>
+                    <input-type>textarea</input-type>
+                    <hint>Informe a instituição patrocinadora (se houver)</hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Descrição Adicional</label>
+                    <input-type>textarea</input-type>
+                    <hint>Inclua informações adicionais de descrição do projeto</hint>
                     <required></required>
                 </field>
             </page>
@@ -5109,6 +5367,360 @@
             <pair>
                 <displayed-value>Curso Superior de Tecnologia em Gestão Empresarial</displayed-value>
                 <stored-value>Curso Superior de Tecnologia em Gestão Empresarial</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_products" dc-term="type">
+            <pair>
+                <displayed-value>Aplicativo</displayed-value>
+                <stored-value>Aplicativo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diário de Bordo</displayed-value>
+                <stored-value>Diário de Bordo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Protótipo</displayed-value>
+                <stored-value>Protótipo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Site</displayed-value>
+                <stored-value>Site</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Vídeo Pitch</displayed-value>
+                <stored-value>Vídeo Pitch</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_courses" dc-term="type">
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Análise e Processos Agroindustriais</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Análise e Processos Agroindustriais</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Desenvolvimento Software Multiplataforma</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Desenvolvimento Software Multiplataforma</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Gestão Empresarial</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Gestão Empresarial</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Produção Têxtil</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Produção Têxtil</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Segurança da Informação</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Segurança da Informação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curso Superior de Tecnologia em Soldagem</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Soldagem</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_disciplines" dc-term="type">
+            <pair>
+                <displayed-value>Cálculo e Projeto de Estruturas Soldadas II</displayed-value>
+                <stored-value>Cálculo e Projeto de Estruturas Soldadas II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Controle de Qualidade Têxtil</displayed-value>
+                <stored-value>Controle de Qualidade Têxtil</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Direito e Ética Profissional na Sociedade da Informação</displayed-value>
+                <stored-value>Direito e Ética Profissional na Sociedade da Informação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Empreendedorismo</displayed-value>
+                <stored-value>Empreendedorismo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Empreendedorismo e Inovação</displayed-value>
+                <stored-value>Empreendedorismo e Inovação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Engenharia de Software I</displayed-value>
+                <stored-value>Engenharia de Software I</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Engenharia de Software II</displayed-value>
+                <stored-value>Engenharia de Software II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Fundamentos da Cadeia de Suprimentos</displayed-value>
+                <stored-value>Fundamentos da Cadeia de Suprimentos</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gestão Ágil de Projetos de Software</displayed-value>
+                <stored-value>Gestão Ágil de Projetos de Software</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gestão Ambiental</displayed-value>
+                <stored-value>Gestão Ambiental</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gestão de Projetos</displayed-value>
+                <stored-value>Gestão de Projetos</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gestão Empresarial em Tecnologia da Informação</displayed-value>
+                <stored-value>Gestão Empresarial em Tecnologia da Informação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Governança de Tecnologia da Informação</displayed-value>
+                <stored-value>Governança de Tecnologia da Informação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Laboratório de Desenvolvimento Multiplataforma</displayed-value>
+                <stored-value>Laboratório de Desenvolvimento Multiplataforma</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Laboratório de Desenvolvimento para Dispositivos Móveis</displayed-value>
+                <stored-value>Laboratório de Desenvolvimento para Dispositivos Móveis</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Laboratório de Desenvolvimento Web</displayed-value>
+                <stored-value>Laboratório de Desenvolvimento Web</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Processos Agroindustriais II</displayed-value>
+                <stored-value>Processos Agroindustriais II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS I</displayed-value>
+                <stored-value>Projeto Integrador ADS I</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS II</displayed-value>
+                <stored-value>Projeto Integrador ADS II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS III</displayed-value>
+                <stored-value>Projeto Integrador ADS III</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS IV</displayed-value>
+                <stored-value>Projeto Integrador ADS IV</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS V</displayed-value>
+                <stored-value>Projeto Integrador ADS V</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador ADS VI</displayed-value>
+                <stored-value>Projeto Integrador ADS VI</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador I</displayed-value>
+                <stored-value>Projeto Integrador I</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador II</displayed-value>
+                <stored-value>Projeto Integrador II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador III</displayed-value>
+                <stored-value>Projeto Integrador III</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador IV</displayed-value>
+                <stored-value>Projeto Integrador IV</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador V</displayed-value>
+                <stored-value>Projeto Integrador V</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Projeto Integrador VI</displayed-value>
+                <stored-value>Projeto Integrador VI</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Química Têxtil e Acabamento II</displayed-value>
+                <stored-value>Química Têxtil e Acabamento II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Robótica para Soldagem</displayed-value>
+                <stored-value>Robótica para Soldagem</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Solda de Manutenção II</displayed-value>
+                <stored-value>Solda de Manutenção II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia da Confecção e Vestuário</displayed-value>
+                <stored-value>Tecnologia da Confecção e Vestuário</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia da Fabricação de Conjuntos Soldados I</displayed-value>
+                <stored-value>Tecnologia da Fabricação de Conjuntos Soldados I</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia da Fabricação de Conjuntos Soldados II</displayed-value>
+                <stored-value>Tecnologia da Fabricação de Conjuntos Soldados II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia da Informação nas Organizações</displayed-value>
+                <stored-value>Tecnologia da Informação nas Organizações</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia de Soldagem de Ligas Ferrosas</displayed-value>
+                <stored-value>Tecnologia de Soldagem de Ligas Ferrosas</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia de Soldagem de Ligas Não Ferrosas</displayed-value>
+                <stored-value>Tecnologia de Soldagem de Ligas Não Ferrosas</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia e Ensaios da Qualidade II</displayed-value>
+                <stored-value>Tecnologia e Ensaios da Qualidade II</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia no Tratamento de Superfícies</displayed-value>
+                <stored-value>Tecnologia no Tratamento de Superfícies</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_periods" dc-term="type">
+            <pair>
+                <displayed-value>1º Semestre</displayed-value>
+                <stored-value>1º Semestre</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2º Semestre</displayed-value>
+                <stored-value>2º Semestre</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Anual</displayed-value>
+                <stored-value>Anual</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_areas" dc-term="type">
+            <pair>
+                <displayed-value>Comunicação</displayed-value>
+                <stored-value>Comunicação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cultura</displayed-value>
+                <stored-value>Cultura</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Direitos Humanos e Justiça</displayed-value>
+                <stored-value>Direitos Humanos e Justiça</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educação</displayed-value>
+                <stored-value>Educação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Meio Ambiente</displayed-value>
+                <stored-value>Meio Ambiente</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Saúde</displayed-value>
+                <stored-value>Saúde</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Tecnologia e Produção</displayed-value>
+                <stored-value>Tecnologia e Produção</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Trabalho</displayed-value>
+                <stored-value>Trabalho</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="common_extension_lines" dc-term="type">
+            <pair>
+                <displayed-value>Ciência, Tecnologia e Inovação para Inclusão Social</displayed-value>
+                <stored-value>Ciência, Tecnologia e Inovação para Inclusão Social</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Comunicação</displayed-value>
+                <stored-value>Comunicação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cultura e Arte</displayed-value>
+                <stored-value>Cultura e Arte</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Desenvolvimento Regional: Inclusão Produtiva, Defesa Civil e Acesso à Água</displayed-value>
+                <stored-value>Desenvolvimento Regional: Inclusão Produtiva, Defesa Civil e Acesso à Água</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Desenvolvimento Rural: Agroecologia e Produção Orgânica</displayed-value>
+                <stored-value>Desenvolvimento Rural: Agroecologia e Produção Orgânica</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Desenvolvimento Urbano</displayed-value>
+                <stored-value>Desenvolvimento Urbano</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Direitos Humanos</displayed-value>
+                <stored-value>Direitos Humanos</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educação</displayed-value>
+                <stored-value>Educação</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Esporte e Lazer</displayed-value>
+                <stored-value>Esporte e Lazer</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geração de Trabalho e Renda por Empreendimentos Econômicos Solidários</displayed-value>
+                <stored-value>Geração de Trabalho e Renda por Empreendimentos Econômicos Solidários</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Justiça: Cidadania, Inclusão e Direitos</displayed-value>
+                <stored-value>Justiça: Cidadania, Inclusão e Direitos</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Meio Ambiente e Recursos Naturais</displayed-value>
+                <stored-value>Meio Ambiente e Recursos Naturais</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Modernização da Gestão Pública</displayed-value>
+                <stored-value>Modernização da Gestão Pública</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mulheres e Relações de Gênero</displayed-value>
+                <stored-value>Mulheres e Relações de Gênero</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pesca e Aquicultura</displayed-value>
+                <stored-value>Pesca e Aquicultura</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Preservação do Patrimônio Cultural Brasileiro</displayed-value>
+                <stored-value>Preservação do Patrimônio Cultural Brasileiro</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Promoção da Igualdade Racial</displayed-value>
+                <stored-value>Promoção da Igualdade Racial</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Promoção da Saúde</displayed-value>
+                <stored-value>Promoção da Saúde</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Redução das Desigualdades Sociais e Combate à Extrema Pobreza</displayed-value>
+                <stored-value>Redução das Desigualdades Sociais e Combate à Extrema Pobreza</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Relação entre Estado e Sociedade, Participação Social e Políticas para Juventude</displayed-value>
+                <stored-value>Relação entre Estado e Sociedade, Participação Social e Políticas para Juventude</stored-value>
             </pair>
         </value-pairs>
 

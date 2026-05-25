@@ -1,19 +1,21 @@
-ARG REPO_URL=https://github.com/GustavoSpigo/DSpace.git
-ARG BRANCH=dspace-6_x
 ARG TARGET_DIR=dspace-installer
 
 FROM maven:3-jdk-8 AS build
-ARG REPO_URL
-ARG BRANCH
 ARG TARGET_DIR
 WORKDIR /app
-RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
-RUN git clone --depth 1 --branch ${BRANCH} ${REPO_URL} . || (echo "git clone failed" && exit 1)
-# If the repository contains a local.cfg for docker build, copy it into /app
-RUN if [ -f dspace/src/main/docker/local.cfg ]; then cp dspace/src/main/docker/local.cfg /app/local.cfg; else echo "no local.cfg in repo, continuing"; fi
+
+# Em vez de instalar o git e clonar, copiamos os arquivos locais que o GitHub Actions já baixou
+COPY . .
+
+# Se o repositório contiver um local.cfg para o build do docker, copia para a raiz /app [cite: 2]
+RUN if [ -f dspace/src/main/docker/local.cfg ]; \
+    then cp dspace/src/main/docker/local.cfg /app/local.cfg; else echo "no local.cfg in repo, continuing"; \
+    fi [cite: 3, 4]
+
 RUN mvn -f pom.xml -Dmirage2.on=true package && mkdir -p /install \
-    && if [ -d /app/dspace/target/${TARGET_DIR} ]; then mv /app/dspace/target/${TARGET_DIR}/* /install; fi \
-    && mvn -f pom.xml clean
+    && if [ -d /app/dspace/target/${TARGET_DIR} ]; \
+    then mv /app/dspace/target/${TARGET_DIR}/* /install; fi \
+    && mvn -f pom.xml clean [cite: 4, 5]
 
 FROM tomcat:8-jre8 AS ant_build
 ARG TARGET_DIR
@@ -27,8 +29,9 @@ RUN apt-get update \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir $ANT_HOME && \
-    wget -qO- "https://archive.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C $ANT_HOME
-RUN ant init_installation update_configs update_code update_webapps update_solr_indexes
+    wget -qO- "https://archive.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz" | \
+    tar -zx --strip-components=1 -C $ANT_HOME [cite: 5, 6]
+RUN ant init_installation update_configs update_code update_webapps update_solr_indexes [cite: 6]
 
 FROM tomcat:8-jre8
 ENV DSPACE_INSTALL=/dspace
@@ -42,7 +45,8 @@ RUN ln -s $DSPACE_INSTALL/webapps/solr    /usr/local/tomcat/webapps/solr    && \
     ln -s $DSPACE_INSTALL/webapps/oai     /usr/local/tomcat/webapps/oai     && \
     ln -s $DSPACE_INSTALL/webapps/rdf     /usr/local/tomcat/webapps/rdf     && \
     ln -s $DSPACE_INSTALL/webapps/sword   /usr/local/tomcat/webapps/sword   && \
-    ln -s $DSPACE_INSTALL/webapps/swordv2 /usr/local/tomcat/webapps/swordv2 || true
+    ln -s $DSPACE_INSTALL/webapps/swordv2 /usr/local/tomcat/webapps/swordv2 || \
+    true [cite: 6, 7, 8]
 
 RUN sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/solr/WEB-INF/web.xml || true && \
-    sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/rest/WEB-INF/web.xml || true
+    sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/rest/WEB-INF/web.xml || true [cite: 8]

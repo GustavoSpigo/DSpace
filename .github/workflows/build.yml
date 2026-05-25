@@ -33,7 +33,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ghcr.io/gustavospigo/dspace-core:latest
-          # Passa os argumentos padrão caso seu Dockerfile precise deles no build
           build-args: |
             BRANCH=dspace-6_x
             TARGET_DIR=dspace-installer

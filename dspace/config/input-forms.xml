@@ -11,7 +11,7 @@
     <!-- with a form. The form-map also provides the special handle "default" -->
     <!-- (which is never a collection), here mapped to "traditional". Any     -->
     <!-- collection which does not appear in this map will be associated with -->
-    <!-- the mapping for handle "default".                                    -->
+    <!-- the mapping for handle "default".                                     -->
 
     <form-map>
         <name-map collection-handle="default" form-name="traditional" />
@@ -1457,13 +1457,13 @@
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
+                    <dc-schema>riccps</dc-schema>
                     <dc-element>contributor</dc-element>
-                    <dc-qualifier>advisor</dc-qualifier>
-                    <repeatable>true</repeatable>
-                    <label>Nome do Coordenador</label>
+                    <dc-qualifier>coordinator</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Nome do Coordenador(a) de curso</label>
                     <input-type>name</input-type>
-                    <hint>Informe o nome do Coordenador. Formato: Último nome ESPAÇO Primeiro nome</hint>
+                    <hint>Informe o(s) nome do(s) Coordenador(es). / Exemplo: Último nome:  ALMEIDA / Primeiro nome: Antônio</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1477,83 +1477,83 @@
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
+                    <dc-schema>riccps</dc-schema>
                     <dc-element>contributor</dc-element>
-                    <dc-qualifier>author</dc-qualifier>
+                    <dc-qualifier>mediator</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Professor Responsável</label>
+                    <label>Nome do Professor Responsável</label>
                     <input-type>name</input-type>
-                    <hint>Informe o nome do Professor Responsável. Formato: Último nome ESPAÇO Primeiro nome</hint>
+                    <hint>Informe  do Professor Responsável . / Exemplo: Último nome: SOUSA / Primeiro nome: Ana</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>professor</dc-element>
-                    <dc-qualifier>identifier</dc-qualifier>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>mediator</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Matrícula do Professor</label>
+                    <label>Número da Matrícula do(a)  Professor(a) Responsável</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a matrícula do Professor Responsável</hint>
+                    <hint>Informe a matrícula</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
+                    <dc-schema>riccps</dc-schema>
                     <dc-element>contributor</dc-element>
-                    <dc-qualifier>other</dc-qualifier>
+                    <dc-qualifier>mediatorother</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Professores Colaboradores</label>
+                    <label>Nome(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
                     <input-type>name</input-type>
-                    <hint>Informe o nome dos Professores e/ou Colaboradores</hint>
+                    <hint>Informe o(s) nome do(s)Professor (es) e/ ou Colaborador (es)</hint>
                     <required></required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>contributor</dc-element>
-                    <dc-qualifier>identifier</dc-qualifier>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>mediatorother</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Matrícula dos Colaboradores</label>
+                    <label>Número da Matrícula do(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a matrícula dos Professores e/ou Colaboradores</hint>
+                    <hint>Informe a matrícula do(s)Professor (es) e/ ou Colaborador (es)</hint>
                     <required></required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>student</dc-element>
-                    <dc-qualifier>count</dc-qualifier>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>studentmount</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Quantidade de Alunos</label>
+                    <label>Quantidade de alunos partipantes</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o número total de alunos que participaram</hint>
+                    <hint>Informa número total de alunos que participaram do Projeto de Extensão Curricularizada</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>student</dc-element>
-                    <dc-qualifier>identifier</dc-qualifier>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>studentregistration</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Matrícula dos Alunos</label>
+                    <label>Número da Matrícula do(s) aluno(s) participante(s)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o(s) Registro(s) do(s) aluno(s) (RA)</hint>
+                    <hint>Informe o(s) Registro(s) do(s)  aluno(s) (RA)</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dcterms</dc-schema>
-                    <dc-element>audience</dc-element>
-                    <dc-qualifier></dc-qualifier>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>targetaudience</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Perfil do Público-alvo</label>
+                    <label>Descrição do perfil dos beneficiados pelo projeto (Público-alvo)</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe o perfil do grupo, comunidade ou organização beneficiada</hint>
+                    <hint>Informe o perfil do grupo, comunidade ou organização beneficiada pelo projeto</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>audience</dc-element>
-                    <dc-qualifier>count</dc-qualifier>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>targetaudienceamount</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Quantidade de Beneficiados</label>
+                    <label>Quantidade de pessoas beneficiadas pelo projeto (Público-alvo)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o quantitativo de beneficiados pela ação</hint>
+                    <hint>Informe o quantitativo de beneficiados pela ação.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1577,13 +1577,13 @@
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>riccps</dc-schema>
-                    <dc-element>project</dc-element>
-                    <dc-qualifier>product</dc-qualifier>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Produto</label>
                     <input-type value-pairs-name="common_extension_products">dropdown</input-type>
-                    <hint>Informe o produto gerado (selecione na lista)</hint>
+                    <hint>Informe o produto (Se houver).</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1597,43 +1597,43 @@
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>riccps</dc-schema>
-                    <dc-element>course</dc-element>
-                    <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>sponsorship</dc-qualifier>
+                    <repeatable>true</repeatable>
                     <label>Curso</label>
                     <input-type value-pairs-name="common_extension_courses">dropdown</input-type>
-                    <hint>Informe o curso ao qual o projeto está vinculado</hint>
+                    <hint>Informe o curso ao qual o trabalho está vinculado.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>discipline</dc-element>
-                    <dc-qualifier></dc-qualifier>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>discipline</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Disciplina Curricularizada</label>
+                    <label>Disciplina curricularizada</label>
                     <input-type value-pairs-name="common_extension_disciplines">dropdown</input-type>
-                    <hint>Informe o(s) Componente(s) curricular(es) envolvido(s)</hint>
+                    <hint>Informe o(s) Componentes(s) curricular(es) envolvido(s) na execução do Projeto de Eextensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>format</dc-element>
-                    <dc-qualifier>extent</dc-qualifier>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>workload</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Carga Horária</label>
+                    <label>Carga horária</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a carga horária do projeto de extensão</hint>
+                    <hint>Carga horária do projeto de extensão</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>coverage</dc-element>
-                    <dc-qualifier>temporal</dc-qualifier>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>disciplineperiod</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Período do Projeto</label>
                     <input-type value-pairs-name="common_extension_periods">dropdown</input-type>
-                    <hint>Informe se o projeto é semestral ou anual</hint>
+                    <hint>Informe se o Projeto de Extensão Curricularizada é semestral ou anual.</hint>
                     <required>Favor informar</required>
                 </field>
             </page>
@@ -1650,33 +1650,43 @@
                     <vocabulary closed="true">riccps</vocabulary>
                 </field>
                 <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>other</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Eixo Tecnológico</label>
+                    <input-type value-pairs-name="common_axis">dropdown</input-type>
+                    <hint>Informe o eixo tecnológico do curso.</hint>
+                    <required>Favor informar</required>
+                </field>
+                <field>
                     <dc-schema>riccps</dc-schema>
                     <dc-element>subject</dc-element>
                     <dc-qualifier>area</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Áreas Temáticas</label>
+                    <repeatable>true</repeatable>
+                    <label>Áreas temáticas de extensão</label>
                     <input-type value-pairs-name="common_extension_areas">dropdown</input-type>
-                    <hint>Informe a área temática do Projeto de Extensão</hint>
+                    <hint>Informe a área temática a qual o Projeto de Extensão Curricularizada é vinculado.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
                     <dc-element>subject</dc-element>
                     <dc-qualifier>line</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Linha Temática</label>
+                    <repeatable>true</repeatable>
+                    <label>Linha de temática</label>
                     <input-type value-pairs-name="common_extension_lines">dropdown</input-type>
-                    <hint>Informe a linha temática do Projeto de Extensão</hint>
+                    <hint>Informe a linha temática do Projeto de Extensão Curricularizada no qual é vinculado.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>description</dc-element>
-                    <dc-qualifier>sponsorship</dc-qualifier>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Fomento / Patrocínio</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe a instituição patrocinadora (se houver)</hint>
+                    <hint>Informe a instituição patrocinadora (fomento) do Projeto de Extensão Curricularizada (se houver)</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1684,9 +1694,9 @@
                     <dc-element>description</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Descrição Adicional</label>
+                    <label>Descrição do item</label>
                     <input-type>textarea</input-type>
-                    <hint>Inclua informações adicionais de descrição do projeto</hint>
+                    <hint>Inclua informações adicionais  de descrição do Projeto de Extensão Curricularizada</hint>
                     <required></required>
                 </field>
             </page>

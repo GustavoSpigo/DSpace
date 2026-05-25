@@ -7,15 +7,16 @@ WORKDIR /app
 # Em vez de instalar o git e clonar, copiamos os arquivos locais que o GitHub Actions já baixou
 COPY . .
 
-# Se o repositório contiver um local.cfg para o build do docker, copia para a raiz /app [cite: 2]
-RUN if [ -f dspace/src/main/docker/local.cfg ]; \
-    then cp dspace/src/main/docker/local.cfg /app/local.cfg; else echo "no local.cfg in repo, continuing"; \
-    fi [cite: 3, 4]
+# Se o repositório contiver um local.cfg para o build do docker, copia para a raiz /app
+RUN if [ -f dspace/src/main/docker/local.cfg ]; then \
+    cp dspace/src/main/docker/local.cfg /app/local.cfg; \
+    else echo "no local.cfg in repo, continuing"; \
+    fi
 
 RUN mvn -f pom.xml -Dmirage2.on=true package && mkdir -p /install \
-    && if [ -d /app/dspace/target/${TARGET_DIR} ]; \
-    then mv /app/dspace/target/${TARGET_DIR}/* /install; fi \
-    && mvn -f pom.xml clean [cite: 4, 5]
+    && if [ -d /app/dspace/target/${TARGET_DIR} ]; then \
+    mv /app/dspace/target/${TARGET_DIR}/* /install; fi \
+    && mvn -f pom.xml clean
 
 FROM tomcat:8-jre8 AS ant_build
 ARG TARGET_DIR
@@ -30,8 +31,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir $ANT_HOME && \
     wget -qO- "https://archive.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz" | \
-    tar -zx --strip-components=1 -C $ANT_HOME [cite: 5, 6]
-RUN ant init_installation update_configs update_code update_webapps update_solr_indexes [cite: 6]
+    tar -zx --strip-components=1 -C $ANT_HOME
+RUN ant init_installation update_configs update_code update_webapps update_solr_indexes
 
 FROM tomcat:8-jre8
 ENV DSPACE_INSTALL=/dspace
@@ -46,7 +47,7 @@ RUN ln -s $DSPACE_INSTALL/webapps/solr    /usr/local/tomcat/webapps/solr    && \
     ln -s $DSPACE_INSTALL/webapps/rdf     /usr/local/tomcat/webapps/rdf     && \
     ln -s $DSPACE_INSTALL/webapps/sword   /usr/local/tomcat/webapps/sword   && \
     ln -s $DSPACE_INSTALL/webapps/swordv2 /usr/local/tomcat/webapps/swordv2 || \
-    true [cite: 6, 7, 8]
+    true
 
 RUN sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/solr/WEB-INF/web.xml || true && \
-    sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/rest/WEB-INF/web.xml || true [cite: 8]
+    sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/rest/WEB-INF/web.xml || true

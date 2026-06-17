@@ -38,11 +38,10 @@ jQuery(document).ready(function ($) {
 
         // Verifica se NÃO possui vocabulário controlado / autoridade (não existe botão _lookup)
         // Expandido para suportar tanto input quanto button para o lookup
-        var hasLookup = $("input[name='submit_" + baseName + "_lookup']").length > 0 || 
-                        $("button[name='submit_" + baseName + "_lookup']").length > 0;
+        var isReadOnly = inputField.prop('readonly');
 
         // Se atende a todos os requisitos, injetamos a interface de cópia em lote
-        if (inputField.length > 0 && !hasLookup) {
+        if (inputField.length > 0 && !isReadOnly) {
 
             // Cria o botão que ficará ao lado do input com estilo alinhado ao Bootstrap do DSpace
             var btnBatch = $('<button type="button" class="btn btn-info btn-sm" style="margin-left: 15px; margin-top:5px; font-weight: 500;">Colar Múltiplos</button>');

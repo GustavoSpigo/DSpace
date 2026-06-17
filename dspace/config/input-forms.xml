@@ -1435,15 +1435,16 @@
         </form>
 
         <form name="extensao">
+            <!-- PÁGINA 1: Identificação, Participantes e Dados do Curso -->
             <page number="1">
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>title</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Título: Subtítulo</label>
+                    <label>Título: subtítulo</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o título principal e subtítulo do Projeto de Extensão Curricularizada, em idioma pátrio</hint>
+                    <hint>Informe o título principal e o subtítulo do Projeto de Extensão Curricularizada, em idioma pátrio.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1451,9 +1452,9 @@
                     <dc-element>description</dc-element>
                     <dc-qualifier>abstract</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Apresentação (Escopo)</label>
+                    <label>Apresentação (Escopo) do Projeto</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe a apresentação do Projeto de Extensão Curricularizada, no idioma pátrio</hint>
+                    <hint>Informe a apresentação do  Projeto de Extensão Curricularizada, no idioma pátrio.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1463,27 +1464,27 @@
                     <repeatable>false</repeatable>
                     <label>Nome do Coordenador(a) de curso</label>
                     <input-type>name</input-type>
-                    <hint>Informe o(s) nome do(s) Coordenador(es). / Exemplo: Último nome:  ALMEIDA / Primeiro nome: Antônio</hint>
+                    <hint>Informe o nome do (a) Coordenador(a) do  Projeto de Extensão Curricularizada. / Exemplo: Último nome:  ALMEIDA / Primeiro nome: Antônio</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
-                    <dc-element>coordinator</dc-element>
-                    <dc-qualifier>identifier</dc-qualifier>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>coordinator</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Matrícula do Coordenador</label>
+                    <label>Número da Matrícula do(a) Coordenador (a)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a matrícula do Coordenador</hint>
+                    <hint>Informe a matrícula do Coordenador(a) do  Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
                     <dc-element>contributor</dc-element>
                     <dc-qualifier>mediator</dc-qualifier>
-                    <repeatable>true</repeatable>
+                    <repeatable>false</repeatable>
                     <label>Nome do Professor Responsável</label>
                     <input-type>name</input-type>
-                    <hint>Informe  do Professor Responsável . / Exemplo: Último nome: SOUSA / Primeiro nome: Ana</hint>
+                    <hint>Informe o nome do(a) Professor(a) Responsável do  Projeto de Extensão Curricularizada. / Exemplo: Último nome: SOUSA / Primeiro nome: Ana</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1491,9 +1492,9 @@
                     <dc-element>identifier</dc-element>
                     <dc-qualifier>mediator</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Número da Matrícula do(a)  Professor(a) Responsável</label>
+                    <label>Número da Matrícula do(a) Professor(a) Responsável</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a matrícula</hint>
+                    <hint>Informe a matrícula do(a) Professor(a) Responsável do  Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1503,7 +1504,7 @@
                     <repeatable>true</repeatable>
                     <label>Nome(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
                     <input-type>name</input-type>
-                    <hint>Informe o(s) nome do(s)Professor (es) e/ ou Colaborador (es)</hint>
+                    <hint>Informe o(s) nome(s) do(s) Professor(es) e/ou servidor(es) colaborador(es). / Exemplo: Último nome: ALMEIDA / Primeiro nome: Antônio</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1513,17 +1514,17 @@
                     <repeatable>true</repeatable>
                     <label>Número da Matrícula do(s) Professor(es) e/ou servidor(es) colaborador(es)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe a matrícula do(s)Professor (es) e/ ou Colaborador (es)</hint>
+                    <hint>Informe a matrícula do(s) Professor(es) e/ou servidor(es) colaborador(es).</hint>
                     <required></required>
                 </field>
                 <field>
                     <dc-schema>riccps</dc-schema>
                     <dc-element>description</dc-element>
-                    <dc-qualifier>studentmount</dc-qualifier>
+                    <dc-qualifier>studentamount</dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Quantidade de alunos partipantes</label>
+                    <label>Quantidade de alunos participantes</label>
                     <input-type>onebox</input-type>
-                    <hint>Informa número total de alunos que participaram do Projeto de Extensão Curricularizada</hint>
+                    <hint>Informe o número total de alunos que participaram do Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1533,7 +1534,7 @@
                     <repeatable>true</repeatable>
                     <label>Número da Matrícula do(s) aluno(s) participante(s)</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o(s) Registro(s) do(s)  aluno(s) (RA)</hint>
+                    <hint>Informe o(s) Registro(s) de Aluno(s) (RA).</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1543,7 +1544,7 @@
                     <repeatable>false</repeatable>
                     <label>Descrição do perfil dos beneficiados pelo projeto (Público-alvo)</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe o perfil do grupo, comunidade ou organização beneficiada pelo projeto</hint>
+                    <hint>Informe o perfil do grupo comunidade ou organização beneficiada pelo projeto de extensão curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1573,17 +1574,17 @@
                     <repeatable>false</repeatable>
                     <label>Tipo Documental</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe o tipo documental adotado no trabalho</hint>
+                    <hint>Projeto de Extensão Curricularizada</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
                     <dc-schema>dcterms</dc-schema>
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
-                    <repeatable>false</repeatable>
+                    <repeatable>true</repeatable>
                     <label>Produto</label>
                     <input-type value-pairs-name="common_extension_products">dropdown</input-type>
-                    <hint>Informe o produto (Se houver).</hint>
+                    <hint>Informe o produto de extensão curricularizada (se houver).</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1593,7 +1594,7 @@
                     <repeatable>false</repeatable>
                     <label>Unidade de Ensino</label>
                     <input-type>onebox</input-type>
-                    <hint>Casa publicadora: Unidade de Ensino (preenchimento automático)</hint>
+                    <hint>Unidade de Ensino (preenchimento automático pelo sistema).</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1613,7 +1614,7 @@
                     <repeatable>true</repeatable>
                     <label>Disciplina curricularizada</label>
                     <input-type value-pairs-name="common_extension_disciplines">dropdown</input-type>
-                    <hint>Informe o(s) Componentes(s) curricular(es) envolvido(s) na execução do Projeto de Eextensão Curricularizada.</hint>
+                    <hint>Informe a(s) disciplina(s) curricularizada(s) envolvida(s) na execução do Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1623,7 +1624,7 @@
                     <repeatable>false</repeatable>
                     <label>Carga horária</label>
                     <input-type>onebox</input-type>
-                    <hint>Carga horária do projeto de extensão</hint>
+                    <hint>Carga horária do projeto de Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1637,6 +1638,8 @@
                     <required>Favor informar</required>
                 </field>
             </page>
+
+            <!-- PÁGINA 2: Dados Temáticos, Palavras-chave e Fomento -->
             <page number="2">
                 <field>
                     <dc-schema>dc</dc-schema>
@@ -1645,7 +1648,7 @@
                     <repeatable>true</repeatable>
                     <label>Palavras-chave</label>
                     <input-type>onebox</input-type>
-                    <hint>Informe palavras-chave separadas por ponto e vírgula</hint>
+                    <hint>Informe palavras-chave separadas por ponto e vírgula.</hint>
                     <required></required>
                     <vocabulary closed="true">riccps</vocabulary>
                 </field>
@@ -1653,10 +1656,10 @@
                     <dc-schema>dc</dc-schema>
                     <dc-element>subject</dc-element>
                     <dc-qualifier>other</dc-qualifier>
-                    <repeatable>false</repeatable>
+                    <repeatable>true</repeatable>
                     <label>Eixo Tecnológico</label>
                     <input-type value-pairs-name="common_axis">dropdown</input-type>
-                    <hint>Informe o eixo tecnológico do curso.</hint>
+                    <hint>Informe o(s) eixo(s) tecnológico(s) do(s) curso(s).</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1666,7 +1669,7 @@
                     <repeatable>true</repeatable>
                     <label>Áreas temáticas de extensão</label>
                     <input-type value-pairs-name="common_extension_areas">dropdown</input-type>
-                    <hint>Informe a área temática a qual o Projeto de Extensão Curricularizada é vinculado.</hint>
+                    <hint>Informe a(s) área(s) temática(s) do  Projeto de Extensão Curricularizada .</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1674,19 +1677,19 @@
                     <dc-element>subject</dc-element>
                     <dc-qualifier>line</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Linha de temática</label>
+                    <label>Linha temática</label>
                     <input-type value-pairs-name="common_extension_lines">dropdown</input-type>
-                    <hint>Informe a linha temática do Projeto de Extensão Curricularizada no qual é vinculado.</hint>
+                    <hint>Informe a linha temática do Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>contributor</dc-element>
-                    <dc-qualifier></dc-qualifier>
+                    <dc-schema>riccps</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>sponsorshipaid</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Fomento / Patrocínio</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe a instituição patrocinadora (fomento) do Projeto de Extensão Curricularizada (se houver)</hint>
+                    <hint>Informe a instituição patrocinadora (fomento) do Projeto de Extensão Curricularizada (se houver),</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1696,12 +1699,11 @@
                     <repeatable>false</repeatable>
                     <label>Descrição do item</label>
                     <input-type>textarea</input-type>
-                    <hint>Inclua informações adicionais  de descrição do Projeto de Extensão Curricularizada</hint>
+                    <hint>Inclua informações adicionais  de descrição do Projeto de Extensão Curricularizada.</hint>
                     <required></required>
                 </field>
             </page>
         </form>
-
 
         <!--form name="tcc_ad"></form-->
     </form-definitions>

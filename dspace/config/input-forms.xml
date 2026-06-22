@@ -1544,7 +1544,7 @@
                     <repeatable>false</repeatable>
                     <label>Descrição do perfil dos beneficiados pelo projeto (Público-alvo)</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe o perfil do grupo comunidade ou organização beneficiada pelo projeto de extensão curricularizada.</hint>
+                    <hint>Informe o perfil do grupo, comunidade ou organização beneficiada pelo Projeto de Extensão Curricularizada</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1573,9 +1573,9 @@
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Tipo Documental</label>
-                    <input-type>onebox</input-type>
-                    <hint>Projeto de Extensão Curricularizada</hint>
-                    <required>Favor informar</required>
+                    <input-type value-pairs-name="common_types_ead_polo">dropdown</input-type>
+                    <hint>Selecione um tipo</hint>
+                    <required>Informar</required>
                 </field>
                 <field>
                     <dc-schema>dcterms</dc-schema>
@@ -1587,7 +1587,7 @@
                     <hint>Informe o produto de extensão curricularizada (se houver).</hint>
                     <required></required>
                 </field>
-                <field>
+                <!--field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>publisher</dc-element>
                     <dc-qualifier></dc-qualifier>
@@ -1596,7 +1596,7 @@
                     <input-type>onebox</input-type>
                     <hint>Unidade de Ensino (preenchimento automático pelo sistema).</hint>
                     <required>Favor informar</required>
-                </field>
+                </field-->
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>description</dc-element>
@@ -1604,7 +1604,7 @@
                     <repeatable>true</repeatable>
                     <label>Curso</label>
                     <input-type value-pairs-name="common_extension_courses">dropdown</input-type>
-                    <hint>Informe o curso ao qual o trabalho está vinculado.</hint>
+                    <hint>Informe o(s) curso(s) ao(s) qual(ais) o Projeto de Extensão Curricularizada está vinculado.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -5412,8 +5412,8 @@
                 <stored-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</stored-value>
             </pair>
             <pair>
-                <displayed-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS</displayed-value>
-                <stored-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS</stored-value>
+                <displayed-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS  (Programa de Articulação da Formação Profissional Média e Superior)</displayed-value>
+                <stored-value>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - AMS  (Programa de Articulação da Formação Profissional Média e Superior)</stored-value>
             </pair>
             <pair>
                 <displayed-value>Curso Superior de Tecnologia em Análise e Processos Agroindustriais</displayed-value>
@@ -5616,6 +5616,10 @@
             <pair>
                 <displayed-value>Anual</displayed-value>
                 <stored-value>Anual</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Bianual</displayed-value>
+                <stored-value>Bianual</stored-value>
             </pair>
         </value-pairs>
 

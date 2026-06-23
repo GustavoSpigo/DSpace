@@ -1573,7 +1573,7 @@
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Tipo Documental</label>
-                    <input-type value-pairs-name="common_types_ead_polo">dropdown</input-type>
+                    <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint>Selecione um tipo</hint>
                     <required>Informar</required>
                 </field>
@@ -1679,7 +1679,7 @@
                     <repeatable>true</repeatable>
                     <label>Linha temática</label>
                     <input-type value-pairs-name="common_extension_lines">dropdown</input-type>
-                    <hint>Informe a linha temática do Projeto de Extensão Curricularizada.</hint>
+                    <hint>Informe a(s) linha(s) temática(s) do Projeto de Extensão Curricularizada.</hint>
                     <required>Favor informar</required>
                 </field>
                 <field>
@@ -1689,7 +1689,7 @@
                     <repeatable>false</repeatable>
                     <label>Fomento / Patrocínio</label>
                     <input-type>textarea</input-type>
-                    <hint>Informe a instituição patrocinadora (fomento) do Projeto de Extensão Curricularizada (se houver),</hint>
+                    <hint>Informe a instituição patrocinadora (fomento) do Projeto de Extensão Curricularizada (se houver).</hint>
                     <required></required>
                 </field>
                 <field>
@@ -1699,7 +1699,7 @@
                     <repeatable>false</repeatable>
                     <label>Descrição do item</label>
                     <input-type>textarea</input-type>
-                    <hint>Inclua informações adicionais  de descrição do Projeto de Extensão Curricularizada.</hint>
+                    <hint>Inclua informações adicionais de descrição do Projeto de Extensão Curricularizada (se houver).</hint>
                     <required></required>
                 </field>
             </page>
